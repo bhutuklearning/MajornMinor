@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #F8F8F6;
+  --color-surface: #FFFFFF;
+  --color-primary-accent: #3B6E6A;
+  --color-secondary-accent: #A47E3B;
+  --color-primary-text: #222222;
+  --color-secondary-text: #666666;
+  --color-border: #E5E5E5;
+  --color-divider: #ECECEC;
+  --color-hover-accent: #2E5552;
+}
+
+@theme {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-primary-accent: var(--color-primary-accent);
+  --color-secondary-accent: var(--color-secondary-accent);
+  --color-primary-text: var(--color-primary-text);
+  --color-secondary-text: var(--color-secondary-text);
+  --color-border: var(--color-border);
+  --color-divider: var(--color-divider);
+  --color-hover-accent: var(--color-hover-accent);
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-text);
+}
+
+/* Selection Color styling */
+::selection {
+  background-color: var(--color-primary-accent);
+  color: var(--color-surface);
+}
+
+/* Custom global focus styling */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-accent);
+  outline-offset: 4px;
+}
+
+/* Typography Overrides */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-primary-text);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-primary-text);
+}
