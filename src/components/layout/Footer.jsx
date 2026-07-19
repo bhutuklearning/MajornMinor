@@ -1,38 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import toast from 'react-hot-toast';
 import { FaYoutube, FaInstagram, FaSpotify } from 'react-icons/fa';
+import { HiChevronUp } from 'react-icons/hi';
 import Container from '../ui/Container';
 import { NAV_LINKS, CONTACT_INFO } from '../../constants/navigation';
 
-const subscriptionSchema = z.object({
-  email: z.string().min(1, 'Email is required').email('Please enter a valid email address')
-});
-
 /**
- * Editorial footer with structured pages, contact links, newsletter signup, and social media.
+ * Editorial footer styled after cultural research institutes, utilizing a dark slate-teal base
+ * from the palette, and adding list separators, custom links, and a scroll-to-top button.
  */
 export default function Footer() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { register, handleSubmit, reset, formState: { errors } } = useForm({
-    resolver: zodResolver(subscriptionSchema)
-  });
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
 
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    try {
-      // Simulate API submit call
-      await new Promise(resolve => setTimeout(resolve, 800));
-      toast.success('Successfully subscribed to the Major & Minor letter.');
-      reset();
-    } catch (e) {
-      toast.error('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setShowScrollBtn(true);
+      } else {
+        setShowScrollBtn(false);
+      }
+    };
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const getSocialIcon = (name) => {
@@ -48,128 +44,109 @@ export default function Footer() {
     }
   };
 
+  const focusAreas = [
+    { name: 'Stress Alleviation', path: '/focus-areas#stress' },
+    { name: 'Anxiety Reduction', path: '/focus-areas#anxiety' },
+    { name: 'Trauma Integration', path: '/focus-areas#trauma' },
+    { name: 'Communal Resonance', path: '/focus-areas#loneliness' }
+  ];
+
   return (
-    <footer className="bg-surface border-t border-border pt-16 pb-10 text-secondary-text mt-auto w-full">
+    <footer className="bg-[#172b29] text-bg/85 pt-20 pb-12 mt-auto w-full border-t border-[#234542]">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 border-b border-divider">
-          {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-[#234542]">
+          
+          {/* Brand/Info Column */}
+          <div className="lg:col-span-6 space-y-6">
             <Link to="/" className="flex items-baseline space-x-1 focus-visible:outline-none">
-              <span className="font-serif text-2xl font-normal tracking-wide text-primary-text hover:text-primary-accent transition-colors duration-300">
-                Major <span className="font-sans text-lg font-light text-secondary-accent">&amp;</span> Minor
+              <span className="font-serif text-2xl sm:text-3xl font-normal tracking-wide text-surface hover:text-secondary-accent transition-colors duration-300">
+                Major <span className="font-sans text-xl font-light text-secondary-accent">&amp;</span> Minor
               </span>
             </Link>
-            <p className="font-sans text-sm leading-relaxed max-w-sm">
+            <p className="font-sans text-xs sm:text-sm leading-relaxed max-w-md text-bg/75">
               A music-based mental wellness initiative. Helping people experiencing stress, anxiety, trauma, and loneliness through the healing power and scientific credibility of sound.
             </p>
+            <div className="flex space-x-5 pt-2">
+              {CONTACT_INFO.socials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-bg/70 hover:text-secondary-accent transition-colors duration-300"
+                  aria-label={social.ariaLabel}
+                >
+                  {getSocialIcon(social.name)}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-sans font-medium text-xs tracking-wider uppercase text-primary-text">
-              Pages
+          {/* Focus Points Column */}
+          <div className="lg:col-span-3 space-y-6">
+            <h3 className="font-serif text-lg sm:text-xl text-surface font-normal">
+              Focus Points
             </h3>
-            <ul className="space-y-2.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.path}>
+            <ul className="space-y-3.5">
+              {focusAreas.map((area) => (
+                <li key={area.name} className="border-b border-[#234542]/60 pb-2.5 last:border-b-0 last:pb-0">
                   <Link
-                    to={link.path}
-                    className="font-sans text-sm hover:text-primary-accent transition-colors duration-200"
+                    to={area.path}
+                    className="font-sans text-xs sm:text-sm text-bg/85 hover:text-surface transition-colors duration-200 block"
                   >
-                    {link.label}
+                    {area.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-sans font-medium text-xs tracking-wider uppercase text-primary-text">
-              Inquiries
+          {/* Quick Links Column */}
+          <div className="lg:col-span-3 space-y-6">
+            <h3 className="font-serif text-lg sm:text-xl text-surface font-normal">
+              Quick Links
             </h3>
-            <p className="font-sans text-sm leading-relaxed">
-              {CONTACT_INFO.address}
-            </p>
-            <div className="space-y-1 font-sans text-sm">
-              <p>
-                Email:{' '}
-                <a
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="text-primary-accent hover:underline"
-                >
-                  {CONTACT_INFO.email}
-                </a>
-              </p>
-              <p>
-                Phone:{' '}
-                <a
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="hover:text-primary-accent transition-colors duration-200"
-                >
-                  {CONTACT_INFO.phone}
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Newsletter Form */}
-          <div className="lg:col-span-3 space-y-4">
-            <h3 className="font-sans font-medium text-xs tracking-wider uppercase text-primary-text">
-              Newsletter
-            </h3>
-            <p className="font-sans text-sm leading-relaxed">
-              Receive updates on research publications, therapeutic sessions, and events.
-            </p>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
-              <div className="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  aria-label="Email address for newsletter subscription"
-                  className={`w-full bg-bg border ${
-                    errors.email ? 'border-red-500 focus-visible:ring-red-500' : 'border-border focus-visible:ring-primary-accent'
-                  } px-4 py-2.5 font-sans text-sm text-primary-text focus:outline-none`}
-                  {...register('email')}
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-primary-accent text-surface hover:bg-hover-accent px-5 py-2.5 font-sans text-xs sm:text-sm uppercase tracking-wider transition-colors duration-300 disabled:opacity-50"
-                >
-                  {isSubmitting ? '...' : 'Join'}
-                </button>
-              </div>
-              {errors.email && (
-                <p className="text-red-500 text-xs font-sans mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </form>
+            <ul className="space-y-3.5">
+              {NAV_LINKS.map((link) => (
+                <li key={link.path} className="border-b border-[#234542]/60 pb-2.5 last:border-b-0 last:pb-0">
+                  <Link
+                    to={link.path}
+                    className="group flex justify-between items-center font-sans text-xs sm:text-sm text-bg/85 hover:text-surface transition-colors duration-200"
+                  >
+                    <span>{link.label}</span>
+                    <span className="transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-300 text-secondary-accent font-light">
+                      &rarr;
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} Major &amp; Minor. All rights reserved.
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-bg/60">
+          <p className="font-sans text-xs tracking-widest uppercase italic">
+            MAJOR &amp; MINOR &copy; {new Date().getFullYear()}. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex space-x-6">
-            {CONTACT_INFO.socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary-text hover:text-primary-accent transition-colors duration-300"
-                aria-label={social.ariaLabel}
-              >
-                {getSocialIcon(social.name)}
-              </a>
-            ))}
+          <div className="font-sans text-xs space-x-6">
+            <span className="opacity-80">Research Credibility</span>
+            <span className="opacity-80 font-light">|</span>
+            <span className="opacity-80">Terms of Sanctuary</span>
           </div>
         </div>
       </Container>
+
+      {/* Floating Scroll to Top button (similar to IKS IIT Delhi button) */}
+      {showScrollBtn && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 bg-secondary-accent text-surface p-3.5 hover:bg-[#8E6B30] transition-colors duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-accent cursor-pointer"
+          aria-label="Scroll to top"
+        >
+          <HiChevronUp className="h-5 w-5" />
+        </button>
+      )}
     </footer>
   );
 }

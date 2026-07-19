@@ -258,6 +258,20 @@ export default function Contact() {
           </div>
         </Container>
       </section>
+
+      {/* Map Section */}
+      <section className="w-full h-[350px] sm:h-[400px] md:h-[500px] relative overflow-hidden group">
+        {/* Subtle overlay that fades out on hover to encourage interaction */}
+        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0381436139!2d87.30705907474974!3d22.314397142385378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d440255555547%3A0x6f2f20dd0c0d6793!2sIndian%20Institute%20of%20Technology%2C%20Kharagpur!5e0!3m2!1sen!2sin!4v1784442557939!5m2!1sen!2sin"
+          className="w-full h-full border-0 grayscale-[25%] group-hover:grayscale-0 transition-all duration-700 ease-in-out shadow-inner"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          title="Institute of Eminence, IIT Kharagpur Map"
+        ></iframe>
+      </section>
     </>
   );
 }
