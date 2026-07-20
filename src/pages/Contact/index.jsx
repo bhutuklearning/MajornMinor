@@ -72,7 +72,12 @@ export default function Contact() {
     <>
       <SEO 
         title="Connect With Us" 
-        description="Get in touch with the Major &amp; Minor research team, inquire about sound healing events, or explore collaboration opportunities." 
+        description="Get in touch with the Major & Minor research team at IIT Kharagpur. Inquire about sound healing events, research collaborations, or workshop bookings." 
+        canonicalPath="/contact"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' }
+        ]}
       />
 
       <PageBanner 

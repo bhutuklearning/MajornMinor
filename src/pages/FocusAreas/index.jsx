@@ -71,6 +71,11 @@ export default function FocusAreas() {
       <SEO 
         title="Therapeutic Focus Areas" 
         description="Discover the science of Auditory Entrainment, Vagal Stimulation, somatic soundscapes, and communal resonance in alleviating stress, anxiety, trauma, and loneliness." 
+        canonicalPath="/focus-areas"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Focus Areas', path: '/focus-areas' }
+        ]}
       />
 
       <PageBanner 

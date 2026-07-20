@@ -19,7 +19,12 @@ export default function About() {
       {/* SEO Metadata injection for About Page */}
       <SEO 
         title="About Our Story & Philosophy" 
-        description="Learn about the origins of Major &amp; Minor, our science-backed wellness mission, core values of compassion and simplicity, and autonomic nerve stimulation research." 
+        description="Learn about the origins of Major & Minor, our science-backed wellness mission, core values of compassion and simplicity, and autonomic nerve stimulation research — founded at IIT Kharagpur." 
+        canonicalPath="/about"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' }
+        ]}
       />
 
       {/* Hero Page Banner */}

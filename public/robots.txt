@@ -1,0 +1,12 @@
+# Major & Minor — robots.txt
+# https://major-and-minor.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Block access to internal build artifacts
+Disallow: /src/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://major-and-minor.vercel.app/sitemap.xml

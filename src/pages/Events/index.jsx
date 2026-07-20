@@ -79,8 +79,13 @@ export default function Events() {
   return (
     <>
       <SEO 
-        title="Events &amp; Workshops" 
-        description="Join us for restorative Sound Baths, academic psychoacoustic Seminars, and group Communal Listening Circles in New York." 
+        title="Events & Workshops" 
+        description="Join us for restorative Sound Baths, academic psychoacoustic Seminars, and group Communal Listening Circles. Book your place at a Major & Minor event today." 
+        canonicalPath="/events"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Events', path: '/events' }
+        ]}
       />
 
       <PageBanner 

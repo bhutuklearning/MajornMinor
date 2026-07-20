@@ -17,10 +17,10 @@ export default function Hero({ onExploreClick }) {
           src={IMAGES.home.hero}
           alt={IMAGES.home.heroAlt}
           loading="eager"
-          className="w-full h-full object-cover object-center opacity-90"
+          className="w-full h-full object-cover object-center"
         />
         {/* Adjusted gradient overlay to keep background colors vivid while ensuring white text pops */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/45"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/30"></div>
       </div>
 
       <Container className="relative z-10 py-24 text-center flex flex-col items-center">

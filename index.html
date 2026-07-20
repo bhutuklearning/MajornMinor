@@ -2,12 +2,115 @@
 <html lang="en" class="h-full scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Major & Minor | Music & Mental Wellness</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PRIMARY META TAGS                                   -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <title>Major & Minor | Music-Based Mental Wellness Initiative</title>
+    <meta name="description" content="Major & Minor is a music-based mental wellness initiative founded at IIT Kharagpur. We use research-backed sound therapies to alleviate anxiety, stress, trauma, and loneliness." />
+    <meta name="keywords" content="music therapy, mental wellness, sound healing, anxiety relief, stress reduction, trauma therapy, loneliness, IIT Kharagpur, sound baths, vagal nerve stimulation, auditory entrainment" />
+    <meta name="author" content="Major & Minor" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#3B6E6A" />
+    <link rel="canonical" href="https://major-and-minor.vercel.app/" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- OPEN GRAPH / FACEBOOK                               -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Major & Minor" />
+    <meta property="og:title" content="Major & Minor | Music-Based Mental Wellness Initiative" />
+    <meta property="og:description" content="Major & Minor bridges psychological research with the healing power of music. Discover sound therapies for anxiety, stress, trauma, and loneliness — founded at IIT Kharagpur." />
+    <meta property="og:url" content="https://major-and-minor.vercel.app/" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- TWITTER CARD                                        -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Major & Minor | Music-Based Mental Wellness Initiative" />
+    <meta name="twitter:description" content="Major & Minor bridges psychological research with the healing power of music. Discover sound therapies for anxiety, stress, trauma, and loneliness — founded at IIT Kharagpur." />
+    <meta name="twitter:site" content="@majorandminor" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- GEO & LANGUAGE                                      -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <meta name="geo.region" content="IN-WB" />
+    <meta name="geo.placename" content="Kharagpur, West Bengal, India" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- FAVICON & APP ICONS                                 -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- STRUCTURED DATA — JSON-LD (Organisation + Website) -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://major-and-minor.vercel.app/#organization",
+          "name": "Major & Minor",
+          "url": "https://major-and-minor.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://major-and-minor.vercel.app/favicon.svg"
+          },
+          "description": "Major & Minor is a music-based mental wellness initiative, utilizing the healing power of music and research-backed sound therapies to alleviate anxiety, stress, depression, and trauma.",
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Indian Institute of Technology, Kharagpur",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "IIT Kharagpur",
+              "addressLocality": "Kharagpur",
+              "addressRegion": "West Bengal",
+              "postalCode": "721302",
+              "addressCountry": "IN"
+            }
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://major-and-minor.vercel.app/#website",
+          "url": "https://major-and-minor.vercel.app/",
+          "name": "Major & Minor",
+          "publisher": {
+            "@id": "https://major-and-minor.vercel.app/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://major-and-minor.vercel.app/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- PERFORMANCE: DNS PRECONNECT                         -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- GOOGLE FONTS                                        -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   </head>
   <body class="h-full bg-bg text-primary-text font-sans antialiased selection:bg-primary-accent selection:text-surface">
     <div id="root" class="min-h-full flex flex-col"></div>

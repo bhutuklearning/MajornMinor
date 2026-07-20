@@ -25,7 +25,9 @@ export default function Home() {
       {/* SEO Metadata injection for Home Page */}
       <SEO 
         title="Music-Based Mental Wellness" 
-        description="Major &amp; Minor is a music-based mental wellness initiative. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
+        description="Major & Minor is a music-based mental wellness initiative founded at IIT Kharagpur. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
+        canonicalPath="/"
+        breadcrumbs={[{ name: 'Home', path: '/' }]}
       />
       
       {/* Hero Section */}
