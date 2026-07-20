@@ -1,65 +1,85 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Container from '../ui/Container';
+import Button from '../ui/Button';
+import { IMAGES } from '../../constants/images';
 
 /**
- * Editorial Mission section displaying philosophy and clinical context.
+ * Editorial Mission / About Us section displaying philosophy, clinical context, 
+ * and featured imagery as specified in the wireframe design.
  */
 export default function MissionSection({ id }) {
   return (
     <section id={id} className="py-20 sm:py-28 bg-bg">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column - Core Statement */}
+          {/* Left Column - Featured Image matching wireframe layout */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 relative"
           >
-            <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block mb-3">
-              Core Philosophy
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary-text font-normal leading-tight tracking-tight">
-              A gentle resonance to restore emotional balance and calm.
-            </h2>
+            {/* Accent offset frame */}
+            <div className="absolute inset-0 border border-primary-accent/40 translate-x-3 translate-y-3 pointer-events-none rounded-2xl"></div>
+            
+            {/* Image Wrapper */}
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-surface aspect-[4/5] sm:aspect-[3/4]">
+              <img
+                src={IMAGES.home.aboutSection}
+                alt={IMAGES.home.aboutSectionAlt}
+                loading="lazy"
+                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+            </div>
           </motion.div>
 
-          {/* Right Column - Descriptive Blocks */}
+          {/* Right Column - About Us Content */}
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:col-span-7 space-y-8"
+            className="lg:col-span-7 space-y-6"
           >
             <div>
-              <h3 className="font-serif text-lg sm:text-xl text-primary-text font-normal mb-3">
-                Auditory Neuroscience
-              </h3>
-              <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed">
-                Sound waves carry frequencies that interact directly with our neurological pathways. By referencing clinical studies in music therapy and psychoacoustics, we curate auditory structures that help slow heart rates, lower cortisol, and trigger emotional release.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-serif text-lg sm:text-xl text-primary-text font-normal mb-3">
-                Restorative Sanctuaries
-              </h3>
-              <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed">
-                We design spaces that promote sound healing within peaceful cultural settings. By using warm ambient frequencies, organic acoustical instruments, and spatial silence, we establish a sanctuary of rest and reflection.
-              </p>
+              <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block mb-3">
+                About Us
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-primary-text font-normal leading-tight tracking-tight">
+                A gentle resonance to restore emotional balance and calm.
+              </h2>
             </div>
 
-            <div>
-              <h3 className="font-serif text-lg sm:text-xl text-primary-text font-normal mb-3">
-                Communal Harmony
-              </h3>
-              <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed">
-                Through local listening events, collaborative music circles, and research forums, Major &amp; Minor builds a compassionate environment. We believe that mental recovery thrives when shared in harmony with others.
-              </p>
+            <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed">
+              Major &amp; Minor is a music-based mental wellness initiative founded at the Institute of Eminence, IIT Kharagpur. We bridge the scientific credibility of psychological research with the profound healing power of ancient acoustic traditions and sound therapies.
+            </p>
+
+            <div className="space-y-4 pt-2 border-t border-divider font-sans">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <h3 className="font-serif text-base text-primary-text font-medium">Auditory Neuroscience</h3>
+                  <p className="text-xs text-secondary-text leading-relaxed">
+                    Research-backed sound structures designed to slow heart rate and lower cortisol levels.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-serif text-base text-primary-text font-medium">Restorative Sanctuaries</h3>
+                  <p className="text-xs text-secondary-text leading-relaxed">
+                    Warm ambient frequencies and organic acoustic instruments creating a haven for reflection.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <Button to="/about" variant="ghost">
+                Know More
+                <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1.5 inline-block">→</span>
+              </Button>
             </div>
           </motion.div>
 

@@ -13,17 +13,18 @@ export default function Button({
   href,
   onClick,
   type = 'button',
-  variant = 'primary', // 'primary' | 'secondary' | 'tertiary'
+  variant = 'primary', // 'primary' | 'secondary' | 'tertiary' | 'ghost'
   className,
   disabled,
   ...props
 }) {
-  const baseClasses = "inline-flex items-center justify-center font-sans font-medium text-xs sm:text-sm tracking-wider uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2";
+  const baseClasses = "inline-flex items-center justify-center font-sans font-medium text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2";
   
   const variants = {
     primary: "bg-primary-accent text-surface hover:bg-hover-accent px-6 py-3.5 rounded-none shadow-sm",
     secondary: "border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-surface px-6 py-3.5 rounded-none",
-    tertiary: "text-secondary-accent hover:text-primary-accent py-2 border-b border-transparent hover:border-primary-accent tracking-widest text-xs uppercase"
+    tertiary: "text-secondary-accent hover:text-primary-accent py-2 border-b border-transparent hover:border-primary-accent tracking-widest text-xs uppercase",
+    ghost: "border-[1.5px] border-primary-text text-primary-text bg-transparent hover:bg-primary-text hover:text-surface px-7 py-3.5 rounded-none tracking-[0.15em] group"
   };
 
   // If using an internal React Router path

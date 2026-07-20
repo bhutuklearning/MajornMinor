@@ -1,6 +1,7 @@
 // Centralized image constants to support easy swaps, lazy loading, and future CDN/WebP configurations.
 import heroHome from '../assets/images/hero-home.jpg';
 import heroAbout from '../assets/images/hero-about.jpg';
+import aboutHomeImage from '../assets/images/about-us-home.png';
 import gallery1 from '../assets/images/gallery-1.jpg';
 import gallery2 from '../assets/images/gallery-2.jpg';
 import gallery3 from '../assets/images/gallery-3.jpg';
@@ -9,10 +10,13 @@ export const IMAGES = {
   home: {
     hero: heroHome,
     heroAlt: "A serene, peaceful space showing instruments, evoking a sense of calm and musical reflection.",
+    aboutSection: aboutHomeImage,
+    aboutSectionAlt: "Classical Indian music theme showing a performer with tanpura amidst flower petals and warm ambient light."
   },
   about: {
     hero: heroAbout,
     heroAlt: "Soft light filtering through a room, creating a calm atmosphere of healing and research.",
+    mainImage: aboutHomeImage,
   },
   gallery: [
     {
