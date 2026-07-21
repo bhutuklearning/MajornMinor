@@ -1,28 +1,29 @@
 # Major & Minor
 
-Major & Minor is a React-based experience website built for a music-driven mental wellness initiative. The application is structured with a responsive design system, modular page components, and navigation that supports a polished, accessible presentation.
+Major & Minor is a modern React-based experience website for a music-driven mental wellness initiative. The project is built around a modular frontend architecture, a polished visual system, and a strong emphasis on storytelling, accessibility, and maintainability.
 
 ## Overview
 
-The site includes the following key sections:
+This application presents the organization’s mission, values, programs, and contact experience through a refined single-page experience. The interface is structured to feel calm, intentional, and editorial while remaining responsive and easy to extend.
 
-- Home page with hero content, mission overview, featured focus areas, quote section, and gallery preview.
-- About page with origin story, mission and vision, core values, research philosophy, and narrative content.
-- Focus Areas page outlining therapeutic pathways for stress, anxiety, trauma, and loneliness.
-- Events page with category filtering, event listings, and registration navigation.
-- Contact page with a validated inquiry form, contact details, and responsive layout.
+## What the experience includes
 
-## Key Features
+- A compelling home experience with hero content, mission storytelling, featured focus areas, a quote section, and a gallery preview.
+- Dedicated pages for About, Focus Areas, Events, and Contact.
+- Reusable UI and section components that keep the implementation consistent across the site.
+- Responsive layouts and smooth navigation designed for a polished user experience.
 
-- React 19 single-page application with client-side routing.
-- Vite-powered development and production workflow.
-- Tailwind CSS for responsive layout and utility-first styling.
-- Code splitting using React lazy and Suspense.
-- Form validation using React Hook Form and Zod.
-- Animated interactions with Framer Motion.
-- SEO metadata management with react-helmet-async.
+## Core capabilities
 
-## Technology Stack
+- React 19 with Vite for a fast, modern development workflow.
+- Client-side routing with React Router.
+- Tailwind CSS for responsive, utility-first styling.
+- Framer Motion for subtle animation and transition effects.
+- React Hook Form and Zod for form validation.
+- React Helmet Async for SEO metadata management.
+- Lazy-loaded route pages and modular component composition for maintainability.
+
+## Technology stack
 
 - React
 - Vite
@@ -35,58 +36,52 @@ The site includes the following key sections:
 - Axios
 - React Icons
 
-## Project Structure
+## Project structure
 
-- `src/main.jsx` - Application entry point.
-- `src/App.jsx` - Root providers, toast notifications, and router integration.
-- `src/routes/index.jsx` - Route configuration with lazy-loaded pages.
-- `src/layouts/RootLayout.jsx` - Shared layout containing navigation, content outlet, and footer.
-- `src/pages/` - Route page components.
-- `src/components/` - Shared UI and page section components.
-- `src/constants/` - Navigation and image asset mappings.
+- src/main.jsx – application entry point.
+- src/App.jsx – app-level providers and routing integration.
+- src/routes/index.jsx – route configuration and lazy-loaded pages.
+- src/layouts/RootLayout.jsx – shared shell for navigation, content, and footer.
+- src/pages/ – route-based page components.
+- src/components/ – shared UI and section-level components.
+- src/constants/ – navigation and asset mapping.
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
-- Node.js 18 or later
-- npm 10 or later (or Yarn/PNPM equivalent)
+- Node.js 18 or newer
+- npm 10 or newer
 
-### Installation
+### Install dependencies
 
-Install dependencies from the project root:
+From the project root, run:
 
 ```bash
 npm install
 ```
 
-### Development
-
-Start the local development server:
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in the terminal to preview the site.
+Open the local URL shown in the terminal to view the site.
 
-### Production Build
-
-Build the production bundle:
+### Build for production
 
 ```bash
 npm run build
 ```
 
-Preview the production build locally:
+### Preview the production build
 
 ```bash
 npm run preview
 ```
 
-### Linting
-
-Validate the project using ESLint:
+### Lint the project
 
 ```bash
 npm run lint
@@ -94,7 +89,6 @@ npm run lint
 
 ## Notes
 
-- The project uses Tailwind CSS plugins for aspect ratio, forms, and typography.
-- Pages and sections are designed for reuse and consistent visual hierarchy.
-- The contact form includes front-end validation and a simulated submit workflow.
-- The routing configuration is optimized for clean page transitions and error handling.
+- The project uses a modular component structure intended for future growth and reuse.
+- The contact experience includes client-side validation and a simulated submission flow.
+- The design focuses on storytelling, clarity, and a calm, high-quality visual experience.
