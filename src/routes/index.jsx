@@ -6,6 +6,7 @@ import ErrorElement from '../components/common/ErrorElement';
 // Dynamic page imports (Code Splitting)
 const Home = lazy(() => import('../pages/Home'));
 const About = lazy(() => import('../pages/About'));
+const Team = lazy(() => import('../pages/Team'));
 const FocusAreas = lazy(() => import('../pages/FocusAreas'));
 const Events = lazy(() => import('../pages/Events'));
 const Contact = lazy(() => import('../pages/Contact'));
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: 'about',
         element: <About />
+      },
+      {
+        path: 'team',
+        element: <Team />
       },
       {
         path: 'focus-areas',

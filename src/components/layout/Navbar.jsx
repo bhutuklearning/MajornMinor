@@ -7,7 +7,8 @@ import { NAV_LINKS } from '../../constants/navigation';
 import { IMAGES } from '../../constants/images';
 
 /**
- * Sticky Navigation Bar with elegant scroll blur effects and responsive mobile drawer.
+ * Sticky Navigation Bar with elegant scroll blur effects, hover dropdown bridge,
+ * and responsive mobile drawer.
  */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,6 +68,60 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+              
+              if (link.dropdown) {
+                return (
+                  <div key={link.path} className="relative group py-2">
+                    {/* Hover Trigger - Clickable to main /about link */}
+                    <Link
+                      to={link.path}
+                      className={`relative font-sans text-xs tracking-widest uppercase transition-colors duration-300 py-1.5 flex items-center gap-1 ${
+                        isScrolled
+                          ? isActive
+                            ? 'text-primary-accent font-semibold'
+                            : 'text-secondary-text hover:text-primary-text'
+                          : isActive
+                            ? 'text-white font-semibold'
+                            : 'text-white/75 hover:text-white'
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavBorder"
+                          className={`absolute bottom-0 left-0 right-0 h-[1.5px] ${
+                            isScrolled ? 'bg-primary-accent' : 'bg-white'
+                          }`}
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </Link>
+
+                    {/* Dropdown Menu - Card Overlay with transparent hover bridge */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-300 ease-out z-50">
+                      <div className="w-44 bg-surface border border-border shadow-lg rounded-xl py-2.5">
+                        {link.dropdown.map((sublink) => {
+                          const isSubActive = location.pathname === sublink.path;
+                          return (
+                            <Link
+                              key={sublink.path}
+                              to={sublink.path}
+                              className={`block px-4 py-2 font-sans text-xxs tracking-wider uppercase text-left transition-colors duration-200 ${
+                                isSubActive
+                                  ? 'text-secondary-accent bg-bg font-semibold border-l-2 border-secondary-accent'
+                                  : 'text-secondary-text hover:text-secondary-accent hover:bg-bg/50 pl-4'
+                              }`}
+                            >
+                              {sublink.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={link.path}
@@ -126,6 +181,42 @@ export default function Navbar() {
             <nav className="px-6 py-8 space-y-4 flex flex-col">
               {NAV_LINKS.map((link) => {
                 const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+                
+                if (link.dropdown) {
+                  return (
+                    <div key={link.path} className="space-y-2.5 flex flex-col">
+                      <span className={`font-sans text-xs tracking-widest uppercase pl-3 font-semibold ${
+                        isScrolled ? 'text-primary-text' : 'text-white'
+                      }`}>
+                        {link.label}
+                      </span>
+                      
+                      <div className="flex flex-col space-y-2.5 pl-3 border-l border-divider/60 ml-3">
+                        {link.dropdown.map((sublink) => {
+                          const isSubActive = location.pathname === sublink.path;
+                          return (
+                            <Link
+                              key={sublink.path}
+                              to={sublink.path}
+                              className={`font-sans text-xs tracking-widest uppercase py-1 transition-colors ${
+                                isScrolled
+                                  ? isSubActive
+                                    ? 'text-primary-accent font-semibold pl-2 border-l border-primary-accent'
+                                    : 'text-secondary-text hover:text-primary-text'
+                                  : isSubActive
+                                    ? 'text-secondary-accent font-semibold pl-2 border-l border-secondary-accent'
+                                    : 'text-white/85 hover:text-white'
+                              }`}
+                            >
+                              {sublink.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.path}

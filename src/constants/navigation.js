@@ -1,6 +1,13 @@
 export const NAV_LINKS = [
   { label: 'Home', path: '/' },
-  { label: 'About Us', path: '/about' },
+  { 
+    label: 'About Us', 
+    path: '/about',
+    dropdown: [
+      { label: 'Our Story', path: '/about' },
+      { label: 'Our Team', path: '/team' }
+    ]
+  },
   { label: 'Focus Areas', path: '/focus-areas' },
   { label: 'Events', path: '/events' },
   { label: 'Contact', path: '/contact' }
