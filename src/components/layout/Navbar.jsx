@@ -108,8 +108,8 @@ export default function Navbar() {
                               to={sublink.path}
                               className={`block px-4 py-2 font-sans text-xxs tracking-wider uppercase text-left transition-colors duration-200 ${
                                 isSubActive
-                                  ? 'text-secondary-accent bg-bg font-semibold border-l-2 border-secondary-accent'
-                                  : 'text-secondary-text hover:text-secondary-accent hover:bg-bg/50 pl-4'
+                                  ? 'text-primary-accent bg-bg font-semibold border-l-2 border-primary-accent'
+                                  : 'text-secondary-text hover:text-primary-accent hover:bg-bg/50 pl-4'
                               }`}
                             >
                               {sublink.label}
