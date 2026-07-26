@@ -4,6 +4,7 @@ import { FaYoutube, FaInstagram, FaSpotify } from 'react-icons/fa';
 import { HiChevronUp } from 'react-icons/hi';
 import Container from '../ui/Container';
 import { NAV_LINKS, CONTACT_INFO } from '../../constants/navigation';
+import { IMAGES } from '../../constants/images';
 
 /**
  * Editorial footer styled after cultural research institutes, utilizing a dark slate-teal base
@@ -58,10 +59,12 @@ export default function Footer() {
           
           {/* Brand/Info Column */}
           <div className="lg:col-span-6 space-y-6">
-            <Link to="/" className="flex items-baseline space-x-1 focus-visible:outline-none">
-              <span className="font-serif text-2xl sm:text-3xl font-normal tracking-wide text-surface hover:text-secondary-accent transition-colors duration-300">
-                Major <span className="font-sans text-xl font-light text-secondary-accent">&amp;</span> Minor
-              </span>
+            <Link to="/" className="inline-flex items-center focus-visible:outline-none">
+              <img
+                src={IMAGES.logo.src}
+                alt={IMAGES.logo.alt}
+                className="h-24 sm:h-28 md:h-32 w-auto max-w-[280px] object-contain transition-opacity duration-300 hover:opacity-90"
+              />
             </Link>
             <p className="font-sans text-xs sm:text-sm leading-relaxed max-w-md text-bg/75">
               A music-based mental wellness initiative. Helping people experiencing stress, anxiety, trauma, and loneliness through the healing power and scientific credibility of sound.
@@ -126,8 +129,8 @@ export default function Footer() {
 
         {/* Footer Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-bg/60">
-          <p className="font-sans text-xs tracking-widest uppercase italic">
-            MAJOR &amp; MINOR &copy; {new Date().getFullYear()}. ALL RIGHTS RESERVED.
+            <p className="font-sans text-xs tracking-widest uppercase italic">
+            PRANAVA &copy; {new Date().getFullYear()}. ALL RIGHTS RESERVED.
           </p>
           <div className="font-sans text-xs space-x-6">
             <span className="opacity-80">Research Credibility</span>

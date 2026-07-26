@@ -80,7 +80,7 @@ export default function Events() {
     <>
       <SEO 
         title="Events & Workshops" 
-        description="Join us for restorative Sound Baths, academic psychoacoustic Seminars, and group Communal Listening Circles. Book your place at a Major & Minor event today." 
+        description="Join us for restorative Sound Baths, academic psychoacoustic Seminars, and group Communal Listening Circles. Book your place at a Pranava event today." 
         canonicalPath="/events"
         breadcrumbs={[
           { name: 'Home', path: '/' },

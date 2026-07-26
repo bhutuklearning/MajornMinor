@@ -25,7 +25,7 @@ export default function Home() {
       {/* SEO Metadata injection for Home Page */}
       <SEO 
         title="Music-Based Mental Wellness" 
-        description="Major & Minor is a music-based mental wellness initiative founded at IIT Kharagpur. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
+        description="Pranava is a music-based mental wellness initiative founded at IIT Kharagpur. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
         canonicalPath="/"
         breadcrumbs={[{ name: 'Home', path: '/' }]}
       />
@@ -34,7 +34,7 @@ export default function Home() {
       <Hero onExploreClick={handleExploreClick} />
       
       {/* Mission Section Wrapper for scroll-anchoring */}
-      <div ref={missionRef} className="scroll-mt-16">
+      <div ref={missionRef} className="scroll-mt-28">
         <MissionSection id="philosophy" />
       </div>
 

@@ -39,7 +39,7 @@ export default function ResearchPhilosophy() {
                 "Our designs ensure that auditory therapies are clinical in grounding, yet traditional in artistic delivery."
               </p>
               <span className="font-sans text-xxs uppercase tracking-wider text-secondary-text font-medium block">
-                — Clinical Research Director, Major &amp; Minor
+                — Clinical Research Director, Pranava
               </span>
             </div>
           </motion.div>
@@ -60,7 +60,7 @@ export default function ResearchPhilosophy() {
                 src={IMAGES.gallery[0].src}
                 alt="A supportive musical therapeutic space representing sound waves reflection"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 duration-1000 ease-out"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
               />
             </div>
           </motion.div>

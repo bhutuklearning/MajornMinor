@@ -1,4 +1,5 @@
 // Centralized image constants to support easy swaps, lazy loading, and future CDN/WebP configurations.
+import logoImage from '../assets/images/logo-p.png';
 import heroHome from '../assets/images/hero-home.jpg';
 import heroAbout from '../assets/images/hero-about.jpg';
 import aboutHomeImage from '../assets/images/about-us-home.png';
@@ -7,6 +8,10 @@ import gallery2 from '../assets/images/gallery-2.jpg';
 import gallery3 from '../assets/images/gallery-3.jpg';
 
 export const IMAGES = {
+  logo: {
+    src: logoImage,
+    alt: 'Pranava Music Therapy Lab logo'
+  },
   home: {
     hero: heroHome,
     heroAlt: "A serene, peaceful space showing instruments, evoking a sense of calm and musical reflection.",

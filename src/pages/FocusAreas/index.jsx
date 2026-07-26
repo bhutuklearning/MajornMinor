@@ -136,7 +136,7 @@ export default function FocusAreas() {
                           src={sec.image}
                           alt={sec.alt}
                           loading="lazy"
-                          className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
                         />
                       </div>
                     </motion.div>

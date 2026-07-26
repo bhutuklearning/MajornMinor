@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://major-and-minor.vercel.app';
-const SITE_NAME = 'Major & Minor';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.svg`;
+const SITE_NAME = 'Pranava-Music Therapy Lab';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/P_logo.png`;
 
 /**
  * Reusable SEO manager utilizing react-helmet-async to update document heads dynamically.
@@ -19,12 +19,11 @@ export default function SEO({
   twitterCard = 'summary_large_image',
   breadcrumbs = []     // [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]
 }) {
-  const titleTag = title
-    ? `${title} | ${SITE_NAME}`
-    : `${SITE_NAME} | Music-Based Mental Wellness Initiative`;
+  // Browser tab always shows the brand name.
+  const titleTag = SITE_NAME;
 
   const defaultDesc =
-    'Major & Minor is a music-based mental wellness initiative founded at IIT Kharagpur. We use research-backed sound therapies to alleviate anxiety, stress, trauma, and loneliness.';
+    'Pranava is a music-based mental wellness initiative founded at IIT Kharagpur. We use research-backed sound therapies to alleviate anxiety, stress, trauma, and loneliness.';
   const metaDescription = description || defaultDesc;
 
   // Build absolute canonical URL from optional relative path
@@ -74,7 +73,7 @@ export default function SEO({
       <meta name="twitter:title" content={titleTag} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={imageUrl} />
-      <meta name="twitter:site" content="@majorandminor" />
+      <meta name="twitter:site" content="@pranavamusictherapylab" />
 
       {/* BreadcrumbList Structured Data */}
       {breadcrumbSchema && (

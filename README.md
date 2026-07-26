@@ -1,6 +1,6 @@
-# Major & Minor
+# Pranava
 
-Major & Minor is a modern React-based experience website for a music-driven mental wellness initiative. The project is built around a modular frontend architecture, a polished visual system, and a strong emphasis on storytelling, accessibility, and maintainability.
+Pranava is a modern React-based experience website for a music-driven mental wellness initiative. The project is built around a modular frontend architecture, a polished visual system, and a strong emphasis on storytelling, accessibility, and maintainability.
 
 ## Overview
 

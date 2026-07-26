@@ -36,7 +36,7 @@ export default function StorySection() {
             className="lg:col-span-7 space-y-6 text-secondary-text font-sans text-xs sm:text-sm md:text-base leading-relaxed"
           >
             <p>
-              Major &amp; Minor was founded under a singular premise: that music is not merely a tool for passive leisure, but a biological utility for neurological restoration. In a fast-paced world saturated with sensory noise, the mind struggles to return to its homeostatic state, leading to stress, chronic anxiety, and cognitive overload.
+              Pranava was founded under a singular premise: that music is not merely a tool for passive leisure, but a biological utility for neurological restoration. In a fast-paced world saturated with sensory noise, the mind struggles to return to its homeostatic state, leading to stress, chronic anxiety, and cognitive overload.
             </p>
             <p>
               Our journey began as a collaborative research inquiry between clinical music therapists, psychoacousticians, and mental health advocates. Observing how specific harmonic ratios, tempos, and ambient structures directly lower autonomic nervous system arousal, we sought to build something more than clinical treatment: a peaceful sanctuary open to all.

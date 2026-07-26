@@ -55,7 +55,7 @@ export default function MissionSection({ id }) {
             </div>
 
             <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed">
-              Major &amp; Minor is a music-based mental wellness initiative founded at the Institute of Eminence, IIT Kharagpur. We bridge the scientific credibility of psychological research with the profound healing power of ancient acoustic traditions and sound therapies.
+              Pranava is a music-based mental wellness initiative founded at the Institute of Eminence, IIT Kharagpur. We bridge the scientific credibility of psychological research with the profound healing power of ancient acoustic traditions and sound therapies.
             </p>
 
             <div className="space-y-4 pt-2 border-t border-divider font-sans">

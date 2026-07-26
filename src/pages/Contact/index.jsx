@@ -72,7 +72,7 @@ export default function Contact() {
     <>
       <SEO 
         title="Connect With Us" 
-        description="Get in touch with the Major & Minor research team at IIT Kharagpur. Inquire about sound healing events, research collaborations, or workshop bookings." 
+        description="Get in touch with the Pranava research team at IIT Kharagpur. Inquire about sound healing events, research collaborations, or workshop bookings." 
         canonicalPath="/contact"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -142,14 +142,14 @@ export default function Contact() {
                   </p>
                   <p>
                     <span className="text-secondary-text block text-xs">Research &amp; Academic Collaboration:</span>
-                    <a href="mailto:research@majorandminor.org" className="text-primary-accent hover:underline font-medium">
-                      research@majorandminor.org
+                    <a href="mailto:research@pranavamusictherapylab.org" className="text-primary-accent hover:underline font-medium">
+                      research@pranavamusictherapylab.org
                     </a>
                   </p>
                   <p>
                     <span className="text-secondary-text block text-xs">Workshop Booking &amp; Private Sessions:</span>
-                    <a href="mailto:events@majorandminor.org" className="text-primary-accent hover:underline font-medium">
-                      events@majorandminor.org
+                    <a href="mailto:events@pranavamusictherapylab.org" className="text-primary-accent hover:underline font-medium">
+                      events@pranavamusictherapylab.org
                     </a>
                   </p>
                 </div>

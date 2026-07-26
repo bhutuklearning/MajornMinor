@@ -1,4 +1,4 @@
-# Major & Minor — robots.txt
+# Pranava — robots.txt
 # https://major-and-minor.vercel.app/
 
 User-agent: *

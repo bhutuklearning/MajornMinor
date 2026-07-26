@@ -52,7 +52,7 @@ export default function Hero({ onExploreClick }) {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
             className="font-sans text-sm sm:text-base md:text-lg text-white/90 leading-relaxed mb-12 max-w-3xl drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]"
           >
-            Major &amp; Minor bridges the scientific credibility of psychological research with the profound healing power of music. Discover a quiet space designed to soothe anxiety, stress, loneliness, and emotional trauma.
+            Pranava bridges the scientific credibility of psychological research with the profound healing power of music. Discover a quiet space designed to soothe anxiety, stress, loneliness, and emotional trauma.
           </motion.p>
 
           {/* Centered Button actions - styled as a balanced white solid / outline combination */}

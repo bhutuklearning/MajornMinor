@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import Container from '../ui/Container';
 import { NAV_LINKS } from '../../constants/navigation';
+import { IMAGES } from '../../constants/images';
 
 /**
  * Sticky Navigation Bar with elegant scroll blur effects and responsive mobile drawer.
@@ -37,23 +38,23 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-surface/90 backdrop-blur-md border-b border-border py-1 shadow-sm'
+          ? 'bg-surface/90 backdrop-blur-md border-b border-border py-2 shadow-sm'
           : 'bg-transparent border-b border-transparent py-3'
       }`}
     >
       <Container>
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo / Brand Name */}
+        <div className="flex h-20 md:h-24 items-center justify-between">
+          {/* Logo / Brand Name — top-left, sized for the full emblem + wordmark */}
           <Link
             to="/"
-            className="flex items-baseline space-x-1 focus-visible:outline-none"
-            aria-label="Major and Minor Home"
+            className="flex shrink-0 items-center focus-visible:outline-none"
+            aria-label="Pranava Home"
           >
-            <span className={`font-serif text-2xl font-normal tracking-wide transition-colors duration-300 ${
-              isScrolled ? 'text-primary-text hover:text-primary-accent' : 'text-white hover:text-secondary-accent'
-            }`}>
-              Major <span className="font-sans text-lg font-light text-secondary-accent">&amp;</span> Minor
-            </span>
+            <img
+              src={IMAGES.logo.src}
+              alt={IMAGES.logo.alt}
+              className={`h-[4.5rem] sm:h-20 md:h-24 w-auto max-w-[220px] sm:max-w-[260px] object-contain object-left transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-95'}`}
+            />
           </Link>
 
           {/* Desktop Navigation Menu */}
@@ -126,10 +127,10 @@ export default function Navbar() {
                     className={`font-sans text-xs tracking-widest uppercase py-2 transition-colors ${
                       isScrolled
                         ? isActive
-                          ? 'text-primary-accent font-medium pl-3 border-l-[2px] border-primary-accent'
+                          ? 'text-primary-accent font-medium pl-3 border-l-2 border-primary-accent'
                           : 'text-secondary-text hover:text-primary-text pl-3'
                         : isActive
-                          ? 'text-secondary-accent font-medium pl-3 border-l-[2px] border-secondary-accent'
+                          ? 'text-secondary-accent font-medium pl-3 border-l-2 border-secondary-accent'
                           : 'text-white/80 hover:text-white pl-3'
                     }`}
                   >
