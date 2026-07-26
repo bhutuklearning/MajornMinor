@@ -64,7 +64,7 @@ export default function Team() {
     <>
       <SEO 
         title="Our Research & Project Team" 
-        description="Meet the core team of Principal Investigators, music experts, and coordinators driving Major & Minor's music therapy initiative at IIT Kharagpur." 
+        description="Meet the core team of Principal Investigators, music experts, and coordinators driving Pranava-Music Therapy Lab's music therapy initiative at IIT Kharagpur." 
         canonicalPath="/team"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -75,7 +75,7 @@ export default function Team() {
       {/* Hero Page Banner */}
       <PageBanner 
         image={IMAGES.about.hero} 
-        alt="Major & Minor project team banner"
+        alt="Pranava-Music Therapy Lab project team banner"
         title="Our Team" 
         subtitle="About Us"
       />

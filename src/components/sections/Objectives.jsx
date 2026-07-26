@@ -39,7 +39,7 @@ export default function Objectives() {
               <div className="w-16 h-[3px] bg-secondary-accent"></div>
               
               <p className="font-sans text-xs sm:text-sm text-secondary-text">
-                The main objectives of Major &amp; Minor - IIT Kharagpur are stated below:
+                The main objectives of Pranava-Music Therapy Lab - IIT Kharagpur are stated below:
               </p>
             </div>
 

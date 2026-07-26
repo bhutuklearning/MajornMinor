@@ -78,7 +78,7 @@ export default function WhatWeDo() {
               <div className="w-16 h-[3px] bg-secondary-accent"></div>
               
               <p className="font-sans text-xs sm:text-sm md:text-base text-secondary-text leading-relaxed pt-2">
-                The Major &amp; Minor initiative at IIT Kharagpur aims to harness the therapeutic potential of Indian classical music and traditional knowledge systems to address contemporary mental wellness challenges through research, education, and global outreach.
+                The Pranava-Music Therapy Lab initiative at IIT Kharagpur aims to harness the therapeutic potential of Indian classical music and traditional knowledge systems to address contemporary mental wellness challenges through research, education, and global outreach.
               </p>
             </div>
 
