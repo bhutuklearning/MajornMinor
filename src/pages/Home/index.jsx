@@ -3,6 +3,8 @@ import SEO from '../../components/common/SEO';
 import Hero from '../../components/sections/Hero';
 import MissionSection from '../../components/sections/MissionSection';
 import QuoteSection from '../../components/sections/QuoteSection';
+import WhatWeDo from '../../components/sections/WhatWeDo';
+import Objectives from '../../components/sections/Objectives';
 import FocusAreasPreview from '../../components/sections/FocusAreasPreview';
 import GalleryPreview from '../../components/sections/GalleryPreview';
 import CTA from '../../components/sections/CTA';
@@ -25,7 +27,7 @@ export default function Home() {
       {/* SEO Metadata injection for Home Page */}
       <SEO 
         title="Music-Based Mental Wellness" 
-        description="Pranava is a music-based mental wellness initiative founded at IIT Kharagpur. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
+        description="Major & Minor is a music-based mental wellness initiative founded at IIT Kharagpur. We guide recovery from anxiety, stress, loneliness, and trauma using research-backed sound therapies." 
         canonicalPath="/"
         breadcrumbs={[{ name: 'Home', path: '/' }]}
       />
@@ -34,7 +36,7 @@ export default function Home() {
       <Hero onExploreClick={handleExploreClick} />
       
       {/* Mission Section Wrapper for scroll-anchoring */}
-      <div ref={missionRef} className="scroll-mt-28">
+      <div ref={missionRef} className="scroll-mt-16">
         <MissionSection id="philosophy" />
       </div>
 
@@ -44,6 +46,12 @@ export default function Home() {
         author="Plato"
         title="The Republic"
       />
+
+      {/* What We Do Segment (IKS IIT Delhi inspired) */}
+      <WhatWeDo />
+
+      {/* Objectives Segment (IKS IIT Delhi inspired) */}
+      <Objectives />
 
       {/* Focus Areas Preview Cards */}
       <FocusAreasPreview />
