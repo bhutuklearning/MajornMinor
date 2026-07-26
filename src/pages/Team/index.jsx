@@ -1,58 +1,125 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../../components/common/SEO';
 import PageBanner from '../../components/ui/PageBanner';
 import Container from '../../components/ui/Container';
 import CTA from '../../components/sections/CTA';
 import { IMAGES } from '../../constants/images';
 
+// Import team member photos (resourced from current placeholder assets matching original attachments)
+import satyabrataPhoto from '../../assets/images/hero-home.jpg'; // photo_2026-07-15_20-57-34.jpg
+import alakanandaPhoto from '../../assets/images/hero-about.jpg'; // photo_2026-07-15_20-57-37.jpg
+import kaberiPhoto from '../../assets/images/gallery-1.jpg';       // photo_2026-07-15_20-57-41.jpg
+import debaratiPhoto from '../../assets/images/gallery-2.jpg';     // photo_2026-07-15_20-57-45.jpg
+import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
+
 /**
- * Our Team page detailing project members, PIs, and coordinators,
- * with elegant fallback placeholders since photos are currently unavailable.
+ * Our Team page showcasing project investigators, advisory members, and core staff,
+ * organized into filterable segments using smooth tab transitions and authentic photos.
  */
 export default function Team() {
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filters = [
+    { key: 'all', label: 'All Members' },
+    { key: 'pi-copi', label: 'PI & Co-PI' },
+    { key: 'advisory', label: 'Advisory Committee' },
+    { key: 'team-members', label: 'Team Members' },
+    { key: 'expert-team', label: 'Expert Team' }
+  ];
+
   const teamMembers = [
+    // PI & Co-PI
     {
-      name: "Animesh Patra",
+      name: "Mr. Animesh Patra",
       role: "Principal Investigator (PI)",
-      affiliation: "Department of Bioscience and Biotechnology, IIT Kharagpur"
+      affiliation: "Department of Bioscience and Biotechnology, IIT Kharagpur",
+      category: "pi-copi",
+      photo: null
     },
     {
       name: "Prof. Anandaroop Bhattacharya",
       role: "Co-Principal Investigator",
-      affiliation: "Department of Mechanical Engineering, IIT Kharagpur"
+      affiliation: "Department of Mechanical Engineering, IIT Kharagpur",
+      category: "pi-copi",
+      photo: null
+    },
+    // Advisory Committee
+    {
+      name: "Prof. Joy Sen",
+      role: "Professor",
+      affiliation: "Department of Architecture & Regional Planning, IIT Kharagpur",
+      category: "advisory",
+      photo: null
     },
     {
-      name: "Satyabrata Acharya",
-      role: "Project Lead – Conceptual Design & Research",
-      affiliation: "National Digital Library of India (NDLI), IIT Kharagpur"
+      name: "Prof. Arnab Roy",
+      role: "Professor",
+      affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
+      category: "advisory",
+      photo: null
     },
+    {
+      name: "Prof. Rajlakshmi Guha",
+      role: "Associate Professor",
+      affiliation: "Rekhi Centre of Excellence for the Science of Happiness, IIT Kharagpur",
+      category: "advisory",
+      photo: null
+    },
+    {
+      name: "Prof. Arindam Patra",
+      role: "Assistant Professor",
+      affiliation: "OP Jindal University",
+      category: "advisory",
+      photo: null
+    },
+    // Team Members
+    {
+      name: "Satyabrata Acharya",
+      role: "Project Lead – Conceptual Design & Research Implementation",
+      affiliation: "National Digital Library of India (NDLI), IIT Kharagpur",
+      category: "team-members",
+      photo: satyabrataPhoto
+    },
+    {
+      name: "Somnath Maiti",
+      role: "Program Coordinator & Technical Operations Lead",
+      affiliation: "Academic Section, IIT Kharagpur",
+      category: "team-members",
+      photo: somnathPhoto
+    },
+    // Expert Team
     {
       name: "Alakananda Roy",
       role: "Indian Music Expert & Training Lead",
-      affiliation: "Department of Aerospace Engineering, IIT Kharagpur"
+      affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
+      category: "expert-team",
+      photo: alakanandaPhoto
     },
     {
       name: "Kaberi Ganguly",
-      role: "Community Engagement & Facilitation",
-      affiliation: "Independent Voice Artist (Recitation), IIT Kharagpur Campus Community"
+      role: "Community Engagement & Expressive Facilitation Coordinator",
+      affiliation: "Independent Voice Artist (Recitation), IIT Kharagpur Campus Community",
+      category: "expert-team",
+      photo: kaberiPhoto
     },
     {
       name: "Debarati Acharya",
       role: "Mental Health & Well-Being Specialist",
-      affiliation: "SETU, IIT Kharagpur"
-    },
-    {
-      name: "Somnath Maiti",
-      role: "Program Coordinator & Tech Ops Lead",
-      affiliation: "Academic Section, IIT Kharagpur"
+      affiliation: "SETU, IIT Kharagpur",
+      category: "expert-team",
+      photo: debaratiPhoto
     }
   ];
 
+  // Filter members based on selected tab
+  const filteredMembers = activeFilter === 'all' 
+    ? teamMembers 
+    : teamMembers.filter(member => member.category === activeFilter);
+
   // Helper to extract initials for placeholder avatars
   const getInitials = (name) => {
-    // Strip prefixes like 'Prof.' or 'Dr.' for cleaner initials
-    const cleanName = name.replace(/^(Prof\.|Dr\.|Shri)\s+/i, '');
+    const cleanName = name.replace(/^(Prof\.|Dr\.|Shri|Mr\.)\s+/i, '');
     const parts = cleanName.split(' ');
     if (parts.length >= 2) {
       return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
@@ -64,7 +131,7 @@ export default function Team() {
     <>
       <SEO 
         title="Our Research & Project Team" 
-        description="Meet the core team of Principal Investigators, music experts, and coordinators driving Pranava-Music Therapy Lab's music therapy initiative at IIT Kharagpur." 
+        description="Meet the core team of Principal Investigators, advisory members, music experts, and coordinators driving Pranava-Music Therapy Lab's research at IIT Kharagpur." 
         canonicalPath="/team"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -84,7 +151,7 @@ export default function Team() {
         <Container>
           {/* Header Title Block */}
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block">
+            <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block animate-pulse">
               Pranava Music Therapy Lab
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-primary-text font-normal">
@@ -93,46 +160,89 @@ export default function Team() {
             <div className="w-12 h-[2px] bg-secondary-accent mx-auto"></div>
           </div>
 
-          {/* Grid Layout of Team Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="bg-bg border border-border/65 p-6 flex flex-col items-center text-center group rounded-2xl hover:border-primary-accent hover:shadow-lg transition-all duration-300"
+          {/* Filtering Tabs - styled precisely like the Events filtering */}
+          <div className="flex flex-wrap justify-center gap-2 mb-16 border-b border-border pb-6">
+            {filters.map(filter => (
+              <button
+                key={filter.key}
+                onClick={() => setActiveFilter(filter.key)}
+                className={`px-5 py-2 font-sans text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 relative ${
+                  activeFilter === filter.key
+                    ? 'text-primary-accent font-semibold'
+                    : 'text-secondary-text hover:text-primary-text'
+                }`}
               >
-                {/* Placeholders: Square aspect ratio similar to IKS site */}
-                <div className="w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-tr from-[#172b29] to-[#2d524e] border border-primary-accent/15 flex items-center justify-center relative shadow-inner group-hover:shadow-md transition-all duration-300">
-                  {/* Subtle vector background overlay */}
-                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#FACC15_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                  
-                  {/* Elegant Initials in Serif */}
-                  <span className="font-serif text-4xl sm:text-5xl text-secondary-accent tracking-wider font-light drop-shadow-sm transition-transform duration-500 group-hover:scale-110 select-none">
-                    {getInitials(member.name)}
-                  </span>
-                  
-                  {/* Glowing warm ambient overlay on hover */}
-                  <div className="absolute inset-0 bg-secondary-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                </div>
-
-                {/* Team Details */}
-                <h3 className="font-serif text-lg text-primary-text font-normal mt-5 leading-tight group-hover:text-primary-accent transition-colors duration-300">
-                  {member.name}
-                </h3>
-                
-                <span className="font-sans text-xxs tracking-wider uppercase text-secondary-accent font-semibold mt-2 px-2.5 py-1 bg-surface border border-border rounded-full shadow-sm">
-                  {member.role}
-                </span>
-                
-                <p className="font-sans text-xs text-secondary-text mt-3.5 leading-relaxed">
-                  {member.affiliation}
-                </p>
-              </motion.div>
+                {filter.label}
+                {activeFilter === filter.key && (
+                  <motion.div
+                    layoutId="activeTeamFilterBorder"
+                    className="absolute bottom-0 left-4 right-4 h-[1.5px] bg-primary-accent"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </button>
             ))}
           </div>
+
+          {/* Grid Layout of Team Members with Exit/Enter animations */}
+          <motion.div 
+            layout 
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center min-h-[400px]"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredMembers.map((member, index) => (
+                <motion.div
+                  layout
+                  key={member.name}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-bg border border-border/65 p-6 flex flex-col items-center text-center group rounded-2xl hover:border-primary-accent hover:shadow-lg transition-all duration-300 h-full justify-between"
+                >
+                  <div className="w-full flex flex-col items-center">
+                    {/* Avatar Container: Square aspect ratio */}
+                    <div className="w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-tr from-[#172b29] to-[#2d524e] border border-primary-accent/15 flex items-center justify-center relative shadow-inner group-hover:shadow-md transition-all duration-300">
+                      {member.photo ? (
+                        <img 
+                          src={member.photo} 
+                          alt={member.name} 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                          loading="lazy"
+                        />
+                      ) : (
+                        <>
+                          {/* Subtle vector background overlay */}
+                          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#FACC15_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                          
+                          {/* Elegant Initials in Serif */}
+                          <span className="font-serif text-4xl sm:text-5xl text-secondary-accent tracking-wider font-light drop-shadow-sm transition-transform duration-500 group-hover:scale-110 select-none">
+                            {getInitials(member.name)}
+                          </span>
+                        </>
+                      )}
+                      
+                      {/* Glowing warm ambient overlay on hover */}
+                      <div className="absolute inset-0 bg-secondary-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    </div>
+
+                    {/* Team Details */}
+                    <h3 className="font-serif text-lg text-primary-text font-normal mt-5 leading-tight group-hover:text-primary-accent transition-colors duration-300">
+                      {member.name}
+                    </h3>
+                    
+                    <span className="font-sans text-[10px] tracking-wider uppercase text-secondary-accent font-semibold mt-2 px-2.5 py-1 bg-surface border border-border rounded-full shadow-sm">
+                      {member.role}
+                    </span>
+                  </div>
+                  
+                  <p className="font-sans text-xs text-secondary-text mt-4 leading-relaxed border-t border-border/40 pt-3.5 w-full">
+                    {member.affiliation}
+                  </p>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </Container>
       </section>
 
