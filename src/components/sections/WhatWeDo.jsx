@@ -36,21 +36,21 @@ export default function WhatWeDo() {
   return (
     <section className="py-20 sm:py-28 bg-surface w-full">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Left Column - Beautiful Hand-drawn Artwork */}
+          {/* Left Column - Beautiful Hand-drawn Artwork (Sticky on Scroll) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-6 relative"
+            className="lg:col-span-6 relative lg:sticky lg:top-24 lg:self-start"
           >
             {/* Ambient Shadow glow */}
             <div className="absolute inset-0 bg-primary-accent/5 blur-3xl rounded-full translate-y-8 -z-10"></div>
             
             {/* The Image Wrapper with editorial frame */}
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-bg aspect-[16/10] sm:aspect-[4/3] lg:aspect-[1.5/1]">
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-bg aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/3]">
               <img
                 src={IMAGES.home.whatWeDoImage || IMAGES.gallery[0].src}
                 alt="Indian Classical Music Instruments and Heritage Artwork"

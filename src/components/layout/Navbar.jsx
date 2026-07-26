@@ -36,15 +36,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
         isScrolled
-          ? 'bg-surface/90 backdrop-blur-md border-b border-border py-2 shadow-sm'
-          : 'bg-transparent border-b border-transparent py-3'
+          ? 'bg-surface/95 backdrop-blur-md border-b border-border py-1 shadow-md'
+          : 'bg-transparent border-b border-transparent py-4'
       }`}
     >
       <Container>
-        <div className="flex h-20 md:h-24 items-center justify-between">
-          {/* Logo / Brand Name — top-left, sized for the full emblem + wordmark */}
+        <div className={`flex items-center justify-between transition-all duration-500 ${
+          isScrolled ? 'h-14 sm:h-16' : 'h-20 md:h-24'
+        }`}>
+          {/* Logo / Brand Name — top-left, dynamically sized */}
           <Link
             to="/"
             className="flex shrink-0 items-center focus-visible:outline-none"
@@ -53,7 +55,11 @@ export default function Navbar() {
             <img
               src={IMAGES.logo.src}
               alt={IMAGES.logo.alt}
-              className={`h-[4.5rem] sm:h-20 md:h-24 w-auto max-w-[220px] sm:max-w-[260px] object-contain object-left transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-95'}`}
+              className={`w-auto object-contain object-left transition-all duration-500 ${
+                isScrolled 
+                  ? 'h-10 sm:h-12 max-w-[160px] sm:max-w-[200px]' 
+                  : 'h-[4.5rem] sm:h-20 md:h-24 max-w-[220px] sm:max-w-[260px]'
+              } ${isScrolled ? 'opacity-100' : 'opacity-95'}`}
             />
           </Link>
 
