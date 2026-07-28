@@ -6,7 +6,7 @@ import aboutHomeImage from '../assets/images/about-us-home.png';
 import whatWeDoImage from '../assets/images/what-we-do.jpg';
 import krishnaFluteImage from '../assets/images/krishna-flute.jpg';
 import objectivesImage from '../assets/images/objectives.jpg';
-import gallery1 from '../assets/images/gallery-1.jpg';
+import gallery1 from '../assets/images/gallery-new.png';
 import gallery2 from '../assets/images/gallery-2.jpg';
 import gallery3 from '../assets/images/gallery-3.jpg';
 
@@ -32,8 +32,8 @@ export const IMAGES = {
   gallery: [
     {
       src: gallery1,
-      alt: "A peaceful forest scene representing wellness and mental clarity through environmental harmony.",
-      caption: "Resonance in Nature"
+      alt: "A vibrant moment from a Pranava-Music Therapy Lab session at IIT Kharagpur capturing participants engaged in a therapeutic music circle.",
+      caption: "Lab Sessions at IIT Kharagpur"
     },
     {
       src: gallery2,
