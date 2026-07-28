@@ -14,9 +14,9 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT_INFO = {
-  email: 'info@pranavamusictherapylab.org',
-  phone: '+1 (800) 555-RHYTHM',
-  address: 'Center for Music & Wellness, 404 Harmony Blvd, Suite 100, NY 10003',
+  email: 'animesh.patra@adm.iitkgp.ac.in',
+  phone: '+91-9933137876',
+  address: 'The Academy of Classical and Folk Arts, IIT Kharagpur, West Bengal, India',
   socials: [
     { name: 'YouTube', url: 'https://youtube.com', ariaLabel: 'Pranava YouTube Channel' },
     { name: 'Instagram', url: 'https://instagram.com', ariaLabel: 'Pranava Instagram Page' },

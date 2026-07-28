@@ -128,31 +128,16 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Centralized Email Coordinates */}
+              {/* Email */}
               <div className="space-y-3 pt-4 border-t border-divider font-sans text-sm">
                 <h3 className="font-sans font-medium text-xs uppercase tracking-wider text-primary-text mb-1">
-                  Centralized Email Endpoints
+                  Email
                 </h3>
-                <div className="space-y-2">
-                  <p>
-                    <span className="text-secondary-text block text-xs">General &amp; General Press:</span>
-                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-primary-accent hover:underline font-medium">
-                      {CONTACT_INFO.email}
-                    </a>
-                  </p>
-                  <p>
-                    <span className="text-secondary-text block text-xs">Research &amp; Academic Collaboration:</span>
-                    <a href="mailto:research@pranavamusictherapylab.org" className="text-primary-accent hover:underline font-medium">
-                      research@pranavamusictherapylab.org
-                    </a>
-                  </p>
-                  <p>
-                    <span className="text-secondary-text block text-xs">Workshop Booking &amp; Private Sessions:</span>
-                    <a href="mailto:events@pranavamusictherapylab.org" className="text-primary-accent hover:underline font-medium">
-                      events@pranavamusictherapylab.org
-                    </a>
-                  </p>
-                </div>
+                <p>
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="text-primary-accent hover:underline font-medium">
+                    {CONTACT_INFO.email}
+                  </a>
+                </p>
               </div>
             </motion.div>
 

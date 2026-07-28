@@ -112,21 +112,21 @@ export default function Team() {
     {
       name: "Amritanshu Goutam",
       role: "Technical & Research Support",
-      affiliation: "IIT Kharagpur",
+      affiliation: "",
       category: "expert-team",
       photo: null
     },
     {
       name: "Avoy Sasmal",
       role: "Technical & Research Support",
-      affiliation: "IIT Kharagpur",
+      affiliation: "",
       category: "expert-team",
       photo: null
     },
     {
       name: "Sayan Pal",
       role: "Researcher",
-      affiliation: "IIT Kharagpur",
+      affiliation: "",
       category: "expert-team",
       photo: null
     }
@@ -254,9 +254,11 @@ export default function Team() {
                     </span>
                   </div>
                   
-                  <p className="font-sans text-xs text-secondary-text mt-4 leading-relaxed border-t border-border/40 pt-3.5 w-full">
-                    {member.affiliation}
-                  </p>
+                  {member.affiliation && (
+                    <p className="font-sans text-xs text-secondary-text mt-4 leading-relaxed border-t border-border/40 pt-3.5 w-full">
+                      {member.affiliation}
+                    </p>
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
