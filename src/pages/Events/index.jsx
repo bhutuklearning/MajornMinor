@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import SEO from '../../components/common/SEO';
 import PageBanner from '../../components/ui/PageBanner';
 import Container from '../../components/ui/Container';
@@ -9,8 +10,8 @@ import CTA from '../../components/sections/CTA';
 import { IMAGES } from '../../constants/images';
 
 /**
- * Events and Workshops page featuring category filters, clean list cards,
- * and responsive details.
+ * Restructured Events and Workshops page showcasing only official upcoming
+ * campus events and workshops at IIT Kharagpur, eliminating all placeholder data.
  */
 export default function Events() {
   const navigate = useNavigate();
@@ -18,51 +19,21 @@ export default function Events() {
 
   const filters = [
     { key: 'all', label: 'All Events' },
-    { key: 'sound-baths', label: 'Sound Baths' },
-    { key: 'academic-seminars', label: 'Seminars' },
-    { key: 'community-circles', label: 'Communal Circles' }
+    { key: 'sound-workshops', label: 'Workshops' },
+    { key: 'academic-seminars', label: 'Seminars' }
   ];
 
   const eventsList = [
     {
       id: 1,
-      title: "Sonic Sanctuary Bath",
-      category: "sound-baths",
-      categoryLabel: "Sound Baths",
-      date: "August 12, 2026",
-      time: "7:00 PM - 8:30 PM",
-      venue: "Metropolitan Calm Center, NY",
-      description: "An immersive evening of auditory meditation. Relax your autonomic nervous system with quartz singing bowls, gongs, and ambient cello resonance."
-    },
-    {
-      id: 2,
-      title: "Acoustic Neuroscience Symposium",
-      category: "academic-seminars",
-      categoryLabel: "Academic Seminars",
-      date: "August 24, 2026",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Manhattan Science & Art Institute, NY",
-      description: "A panel discussion exploring current clinical findings in auditory entrainment, vagal nerve stimulation, and psychoacoustic recovery pathways."
-    },
-    {
-      id: 3,
-      title: "Communal Vocal Toning Circle",
-      category: "community-circles",
-      categoryLabel: "Community Circles",
-      date: "September 08, 2026",
-      time: "6:30 PM - 8:00 PM",
-      venue: "Harmony Community Hall, Brooklyn",
-      description: "A collective vocal pacing session using organic drone humming and group rhythm circles to de-escalate anxiety and bridge social isolation."
-    },
-    {
-      id: 4,
-      title: "Evening Reflection Sound Meditation",
-      category: "sound-baths",
-      categoryLabel: "Sound Baths",
-      date: "September 15, 2026",
-      time: "8:00 PM - 9:15 PM",
-      venue: "Metropolitan Calm Center, NY",
-      description: "A quiet, slow-tempo acoustic pacing meditation designed to support sleep preparation and alleviate high stress levels."
+      title: "Pranava Raga-Chikitsa Workshop",
+      category: "sound-workshops",
+      categoryLabel: "Sound Workshops",
+      date: "Upcoming Event",
+      time: "To be notified later",
+      venue: "Academy of Classical and Folk Arts, IIT Kharagpur (To be notified later)",
+      registration: "To be notified later (via Google Form)",
+      description: "An experiential research-backed workshop exploring civilizational musicology and raga-based sound therapy. Participants will experience structured therapeutic soundscapes utilizing classical Indian instruments designed to regulate physiological stress markers."
     }
   ];
 
@@ -72,15 +43,18 @@ export default function Events() {
     : eventsList.filter(e => e.category === activeFilter);
 
   const handleRegister = (eventTitle) => {
-    // Navigate to contact with pre-filled state
-    navigate(`/contact?subject=booking&event=${encodeURIComponent(eventTitle)}`);
+    toast.success(`Thank you for your interest! We will notify you once registrations open for the ${eventTitle}.`);
+    // Also navigate to contact after a slight delay
+    setTimeout(() => {
+      navigate(`/contact?subject=booking&event=${encodeURIComponent(eventTitle)}`);
+    }, 1500);
   };
 
   return (
     <>
       <SEO 
         title="Events & Workshops" 
-        description="Join us for restorative Sound Baths, academic psychoacoustic Seminars, and group Communal Listening Circles. Book your place at a Pranava event today." 
+        description="Join us for restorative Sound Workshops and academic psychoacoustic Seminars at IIT Kharagpur. Register interest for upcoming events today." 
         canonicalPath="/events"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -121,53 +95,84 @@ export default function Events() {
             ))}
           </div>
 
-          {/* Events Listings Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Events Listings Container */}
+          <div className="max-w-3xl mx-auto">
             <AnimatePresence mode="popLayout">
-              {filteredEvents.map(event => (
+              {filteredEvents.length > 0 ? (
+                filteredEvents.map(event => (
+                  <motion.div
+                    layout
+                    key={event.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-bg border border-primary-accent/15 hover:border-primary-accent/30 rounded-2xl p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 relative group"
+                  >
+                    {/* Glowing highlight edge */}
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary-accent via-secondary-accent to-primary-accent rounded-t-2xl opacity-75"></div>
+
+                    <div className="space-y-6">
+                      <div className="flex flex-wrap justify-between items-center gap-4">
+                        <span className="px-3 py-1 bg-secondary-accent/10 border border-secondary-accent/20 rounded-full font-sans text-[10px] tracking-widest text-secondary-accent uppercase font-semibold">
+                          {event.categoryLabel}
+                        </span>
+                        
+                        {/* Upcoming Event Banner */}
+                        <span className="px-3 py-1 bg-primary-accent/10 border border-primary-accent/30 rounded-full font-sans text-[10px] tracking-widest text-primary-accent uppercase font-bold shadow-sm">
+                          {event.date}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif text-2xl sm:text-3xl text-primary-text font-normal leading-tight group-hover:text-primary-accent transition-colors duration-300">
+                        {event.title}
+                      </h3>
+                      
+                      <p className="font-sans text-xs sm:text-sm text-secondary-text leading-relaxed">
+                        {event.description}
+                      </p>
+
+                      <div className="pt-5 border-t border-divider/60 font-sans text-xs sm:text-sm text-secondary-text space-y-3">
+                        <div className="flex items-start">
+                          <span className="font-semibold text-primary-text uppercase tracking-wider text-[10px] w-28 shrink-0 mt-0.5">Time:</span>
+                          <span className="text-secondary-text font-medium">{event.time}</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="font-semibold text-primary-text uppercase tracking-wider text-[10px] w-28 shrink-0 mt-0.5">Venue:</span>
+                          <span className="text-secondary-text font-medium">{event.venue}</span>
+                        </div>
+                        <div className="flex items-start">
+                          <span className="font-semibold text-primary-text uppercase tracking-wider text-[10px] w-28 shrink-0 mt-0.5">Registration:</span>
+                          <span className="text-primary-accent italic font-semibold">{event.registration}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-8 flex flex-col sm:flex-row gap-4 items-center">
+                      <Button 
+                        onClick={() => handleRegister(event.title)}
+                        className="w-full sm:w-auto px-8"
+                      >
+                        Notify Me
+                      </Button>
+                      <span className="text-[11px] font-sans text-secondary-text/80 italic text-center sm:text-left">
+                        Click to register interest and be notified once Google Form is released.
+                      </span>
+                    </div>
+                  </motion.div>
+                ))
+              ) : (
                 <motion.div
-                  layout
-                  key={event.id}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-bg border border-border p-8 flex flex-col justify-between h-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-16 bg-bg/50 border border-dashed border-border rounded-2xl p-8"
                 >
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start gap-4">
-                      <span className="font-sans text-xs tracking-widest text-secondary-accent uppercase font-medium">
-                        {event.categoryLabel}
-                      </span>
-                      <span className="font-sans text-xs text-secondary-text">
-                        {event.date}
-                      </span>
-                    </div>
-
-                    <h3 className="font-serif text-xl sm:text-2xl text-primary-text font-normal">
-                      {event.title}
-                    </h3>
-                    
-                    <p className="font-sans text-xs sm:text-sm text-secondary-text leading-relaxed">
-                      {event.description}
-                    </p>
-
-                    <div className="pt-2 font-sans text-xs text-secondary-text space-y-1">
-                      <p><span className="font-medium text-primary-text">Time:</span> {event.time}</p>
-                      <p><span className="font-medium text-primary-text">Venue:</span> {event.venue}</p>
-                    </div>
-                  </div>
-
-                  <div className="pt-8">
-                    <Button 
-                      onClick={() => handleRegister(event.title)}
-                      className="w-full sm:w-auto"
-                    >
-                      Register Info
-                    </Button>
-                  </div>
+                  <p className="font-serif text-lg text-primary-text mb-2">No Scheduled Events</p>
+                  <p className="font-sans text-xs text-secondary-text max-w-sm mx-auto">
+                    There are no upcoming events in this category at the moment. Please select another tab or register interest to be notified of future dates.
+                  </p>
                 </motion.div>
-              ))}
+              )}
             </AnimatePresence>
           </div>
         </Container>
