@@ -18,10 +18,9 @@ import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026
  * organized into filterable segments using smooth tab transitions and authentic photos.
  */
 export default function Team() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('pi-copi');
 
   const filters = [
-    { key: 'all', label: 'All Members' },
     { key: 'pi-copi', label: 'PI & Co-PI' },
     { key: 'advisory', label: 'Advisory Committee' },
     { key: 'team-members', label: 'Team Members' },
@@ -88,34 +87,53 @@ export default function Team() {
       category: "team-members",
       photo: somnathPhoto
     },
-    // Expert Team
     {
       name: "Alakananda Roy",
       role: "Indian Music Expert & Training Lead",
       affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
-      category: "expert-team",
+      category: "team-members",
       photo: alakanandaPhoto
     },
     {
       name: "Kaberi Ganguly",
       role: "Community Engagement & Expressive Facilitation Coordinator",
       affiliation: "Independent Voice Artist (Recitation), IIT Kharagpur Campus Community",
-      category: "expert-team",
+      category: "team-members",
       photo: kaberiPhoto
     },
     {
       name: "Debarati Acharya",
       role: "Mental Health & Well-Being Specialist",
       affiliation: "SETU, IIT Kharagpur",
-      category: "expert-team",
+      category: "team-members",
       photo: debaratiPhoto
+    },
+    // Expert Team
+    {
+      name: "Amritanshu Goutam",
+      role: "Technical & Research Support",
+      affiliation: "IIT Kharagpur",
+      category: "expert-team",
+      photo: null
+    },
+    {
+      name: "Avoy Sasmal",
+      role: "Technical & Research Support",
+      affiliation: "IIT Kharagpur",
+      category: "expert-team",
+      photo: null
+    },
+    {
+      name: "Sayan Pal",
+      role: "Researcher",
+      affiliation: "IIT Kharagpur",
+      category: "expert-team",
+      photo: null
     }
   ];
 
   // Filter members based on selected tab
-  const filteredMembers = activeFilter === 'all' 
-    ? teamMembers 
-    : teamMembers.filter(member => member.category === activeFilter);
+  const filteredMembers = teamMembers.filter(member => member.category === activeFilter);
 
   // Helper to extract initials for placeholder avatars
   const getInitials = (name) => {
