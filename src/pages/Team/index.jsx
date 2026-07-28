@@ -8,7 +8,7 @@ import { IMAGES } from '../../constants/images';
 
 // Import team member photos (resourced from current placeholder assets matching original attachments)
 import satyabrataPhoto from '../../assets/images/hero-home.jpg'; // photo_2026-07-15_20-57-34.jpg
-import alakanandaPhoto from '../../assets/images/hero-about.jpg'; // photo_2026-07-15_20-57-37.jpg
+import alakanandaPhoto from '../../assets/images/alokananda.jpg';
 import kaberiPhoto from '../../assets/images/gallery-1.jpg';       // photo_2026-07-15_20-57-41.jpg
 import debaratiPhoto from '../../assets/images/gallery-2.jpg';     // photo_2026-07-15_20-57-45.jpg
 import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
@@ -72,6 +72,13 @@ export default function Team() {
       category: "advisory",
       photo: null
     },
+    {
+      name: "Prof. Amiyangshu De",
+      role: "Faculty at the School of Pharmacy",
+      affiliation: "Seacom Skills University",
+      category: "advisory",
+      photo: null
+    },
     // Team Members
     {
       name: "Satyabrata Acharya",
@@ -92,7 +99,8 @@ export default function Team() {
       role: "Indian Music Expert & Training Lead",
       affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
       category: "team-members",
-      photo: alakanandaPhoto
+      photo: alakanandaPhoto,
+      objectPosition: "object-top"
     },
     {
       name: "Kaberi Ganguly",
@@ -225,7 +233,7 @@ export default function Team() {
                         <img 
                           src={member.photo} 
                           alt={member.name} 
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${member.objectPosition || 'object-center'}`} 
                           loading="lazy"
                         />
                       ) : (
