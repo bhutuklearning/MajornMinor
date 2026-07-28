@@ -17,7 +17,7 @@ export default function CTA() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block">
+          <span className="font-sans text-sm sm:text-base tracking-widest uppercase text-secondary-accent font-semibold block">
             Cultivate Calmness
           </span>
           

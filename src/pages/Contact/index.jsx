@@ -103,7 +103,7 @@ export default function Contact() {
                   Reach Out
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl text-primary-text font-normal leading-tight tracking-tight">
-                  We welcome research partnerships, workshop bookings, and general inquiries.
+                  We welcome research partnerships, and general inquiries.
                 </h2>
               </div>
 
@@ -205,7 +205,7 @@ export default function Contact() {
                   >
                     <option value="general">General Inquiry</option>
                     <option value="research">Research Collaboration</option>
-                    <option value="booking">Workshop Booking</option>
+                    {/* <option value="booking">Workshop Booking</option> */}
                     <option value="support">General Support</option>
                   </select>
                   {errors.subject && (

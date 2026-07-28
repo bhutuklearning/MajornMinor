@@ -18,10 +18,10 @@ export default function PageBanner({ image, alt, title, subtitle }) {
           transition={{ duration: 1.8, ease: 'easeOut' }}
           src={image}
           alt={alt}
-          className="w-full h-full object-cover object-center opacity-90"
+          className="w-full h-full object-cover object-center"
         />
-        {/* Subtle gradient overlay to provide text and navbar contrast while keeping background colorful */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/25"></div>
+        {/* Light gradient overlay to preserve background image colors while offering text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/35"></div>
       </div>
 
       <Container className="relative z-10 text-surface text-center flex flex-col items-center">
@@ -31,13 +31,13 @@ export default function PageBanner({ image, alt, title, subtitle }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="font-sans text-xs tracking-widest uppercase text-secondary-accent flex items-center space-x-2 drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.85)]"
+            className="font-sans text-xs tracking-widest uppercase text-white/60 flex items-center space-x-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]"
           >
-            <Link to="/" className="hover:text-surface transition-colors duration-200">
+            <Link to="/" className="text-white/80 hover:text-secondary-accent transition-colors duration-200">
               Home
             </Link>
-            <span className="text-surface/40">/</span>
-            <span className="text-surface/85">{subtitle || "About"}</span>
+            <span className="text-white/40">/</span>
+            <span className="text-white/90">{subtitle || "About"}</span>
           </motion.div>
 
           {/* Title */}
@@ -45,7 +45,7 @@ export default function PageBanner({ image, alt, title, subtitle }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.15 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-tight tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-tight tracking-tight drop-shadow-[0_3px_10px_rgba(0,0,0,0.95)]"
           >
             {title}
           </motion.h1>
