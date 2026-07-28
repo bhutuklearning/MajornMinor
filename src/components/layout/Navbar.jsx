@@ -40,12 +40,12 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
         isScrolled
           ? 'bg-surface/95 backdrop-blur-md border-b border-border py-1 shadow-md'
-          : 'bg-transparent border-b border-transparent py-4'
+          : 'bg-transparent border-b border-transparent py-2 md:py-4'
       }`}
     >
       <Container>
         <div className={`flex items-center justify-between transition-all duration-500 ${
-          isScrolled ? 'h-14 sm:h-16' : 'h-20 md:h-24'
+          isScrolled ? 'h-14 sm:h-16' : 'h-16 md:h-24'
         }`}>
           {/* Logo / Brand Name — top-left, dynamically sized */}
           <Link
@@ -59,7 +59,7 @@ export default function Navbar() {
               className={`w-auto object-contain object-left transition-all duration-500 ${
                 isScrolled 
                   ? 'h-10 sm:h-12 max-w-[160px] sm:max-w-[200px]' 
-                  : 'h-[4.5rem] sm:h-20 md:h-24 max-w-[220px] sm:max-w-[260px]'
+                  : 'h-12 sm:h-20 md:h-24 max-w-[180px] sm:max-w-[260px]'
               } ${isScrolled ? 'opacity-100' : 'opacity-95'}`}
             />
           </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 -mr-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+            className={`md:hidden p-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
               isScrolled ? 'text-primary-text hover:text-primary-accent' : 'text-white hover:text-secondary-accent'
             }`}
             aria-expanded={isOpen}
