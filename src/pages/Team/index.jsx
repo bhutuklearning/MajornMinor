@@ -17,6 +17,8 @@ import joysenPhoto from '../../assets/images/joysen.png';
 import arnabroyPhoto from '../../assets/images/arnabroy.png';
 import rajlakshmiPhoto from '../../assets/images/rajlakshmi.png';
 import arindampatraPhoto from '../../assets/images/arindampatra.png';
+import amiyangshudePhoto from '../../assets/images/amiyangshude.jpeg';
+import vikashjhaPhoto from '../../assets/images/vikashjha.png';
 
 /**
  * Our Team page showcasing project investigators, advisory members, and core staff,
@@ -73,7 +75,7 @@ export default function Team() {
     {
       name: "Prof. Arindam Patra",
       role: "Assistant Professor",
-      affiliation: "OP Jindal University",
+      affiliation: "Department of Humanities, O.P. Jindal University",
       category: "advisory",
       photo: arindampatraPhoto,
       objectPosition: "object-top"
@@ -83,7 +85,8 @@ export default function Team() {
       role: "Associate Professor",
       affiliation: "School of Pharmacy, Seacom Skills University",
       category: "advisory",
-      photo: null
+      photo: amiyangshudePhoto,
+      objectPosition: "object-top"
     },
     // Team Members
     {
@@ -121,6 +124,13 @@ export default function Team() {
       affiliation: "SETU, IIT Kharagpur",
       category: "team-members",
       photo: debaratiPhoto
+    },
+    {
+      name: "Vikash Ranjan Jha",
+      role: "Clinical Psychologist and Senior Counsellor",
+      affiliation: "SETU, IIT Kharagpur",
+      category: "team-members",
+      photo: vikashjhaPhoto
     },
     // Expert Team
     {
