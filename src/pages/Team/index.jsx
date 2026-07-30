@@ -12,6 +12,11 @@ import alakanandaPhoto from '../../assets/images/alokananda.jpg';
 import kaberiPhoto from '../../assets/images/gallery-1.jpg';       // photo_2026-07-15_20-57-41.jpg
 import debaratiPhoto from '../../assets/images/gallery-2.jpg';     // photo_2026-07-15_20-57-45.jpg
 import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
+import anandaroopPhoto from '../../assets/images/anandaroop.png';
+import joysenPhoto from '../../assets/images/joysen.png';
+import arnabroyPhoto from '../../assets/images/arnabroy.png';
+import rajlakshmiPhoto from '../../assets/images/rajlakshmi.png';
+import arindampatraPhoto from '../../assets/images/arindampatra.png';
 
 /**
  * Our Team page showcasing project investigators, advisory members, and core staff,
@@ -41,7 +46,7 @@ export default function Team() {
       role: "Co-Principal Investigator",
       affiliation: "Department of Mechanical Engineering, IIT Kharagpur",
       category: "pi-copi",
-      photo: null
+      photo: anandaroopPhoto
     },
     // Advisory Committee
     {
@@ -49,33 +54,34 @@ export default function Team() {
       role: "Professor",
       affiliation: "Department of Architecture & Regional Planning, IIT Kharagpur",
       category: "advisory",
-      photo: null
+      photo: joysenPhoto
     },
     {
       name: "Prof. Arnab Roy",
       role: "Professor",
       affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
       category: "advisory",
-      photo: null
+      photo: arnabroyPhoto
     },
     {
       name: "Prof. Rajlakshmi Guha",
       role: "Associate Professor",
       affiliation: "Rekhi Centre of Excellence for the Science of Happiness, IIT Kharagpur",
       category: "advisory",
-      photo: null
+      photo: rajlakshmiPhoto
     },
     {
       name: "Prof. Arindam Patra",
       role: "Assistant Professor",
       affiliation: "OP Jindal University",
       category: "advisory",
-      photo: null
+      photo: arindampatraPhoto,
+      objectPosition: "object-top"
     },
     {
       name: "Prof. Amiyangshu De",
-      role: "Faculty at the School of Pharmacy",
-      affiliation: "Seacom Skills University",
+      role: "Associate Professor",
+      affiliation: "School of Pharmacy, Seacom Skills University",
       category: "advisory",
       photo: null
     },
