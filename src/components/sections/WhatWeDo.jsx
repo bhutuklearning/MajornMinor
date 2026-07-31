@@ -50,7 +50,7 @@ export default function WhatWeDo() {
             <div className="absolute inset-0 bg-primary-accent/5 blur-3xl rounded-full translate-y-8 -z-10"></div>
             
             {/* The Image Wrapper with editorial frame */}
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-bg aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/3]">
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-bg aspect-square">
               <img
                 src={IMAGES.home.whatWeDoImage || IMAGES.gallery[0].src}
                 alt="Indian Classical Music Instruments and Heritage Artwork"

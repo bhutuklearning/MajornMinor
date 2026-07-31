@@ -10,7 +10,7 @@ import { IMAGES } from '../../constants/images';
 import satyabrataPhoto from '../../assets/images/satyabrata.jpeg';
 import alakanandaPhoto from '../../assets/images/alokananda.jpg';
 import kaberiPhoto from '../../assets/images/kaberi.jpeg';
-import debaratiPhoto from '../../assets/images/gallery-2.jpg';     // photo_2026-07-15_20-57-45.jpg
+import debaratiPhoto from '../../assets/images/debarati-new.jpeg';
 import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
 import anandaroopPhoto from '../../assets/images/anandaroop.png';
 import joysenPhoto from '../../assets/images/joysen.png';
