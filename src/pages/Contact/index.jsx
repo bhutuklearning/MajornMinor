@@ -5,7 +5,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
-import { FaYoutube, FaInstagram, FaSpotify } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import SEO from '../../components/common/SEO';
 import PageBanner from '../../components/ui/PageBanner';
 import Container from '../../components/ui/Container';
@@ -54,8 +55,21 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      // Simulate API submit request
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const serviceId = 'service_xfs0kam';
+      const templateId = 'template_78mpnal';
+      const publicKey = 'wChQr_gOPetoNSVIp';
+
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+        to_name: 'Pranava'
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, {
+        publicKey
+      });
       toast.success('Your message has been sent successfully. Our team will contact you shortly.');
       reset({
         name: '',
@@ -64,7 +78,21 @@ export default function Contact() {
         message: ''
       });
     } catch (e) {
+      console.error('EmailJS Error:', e);
       toast.error('An error occurred. Please try again later.');
+    }
+  };
+
+  const getSocialIcon = (name) => {
+    switch (name.toLowerCase()) {
+      case 'facebook':
+        return <FaFacebook className="h-5 w-5" />;
+      case 'linkedin':
+        return <FaLinkedin className="h-5 w-5" />;
+      case 'email':
+        return <FaEnvelope className="h-5 w-5" />;
+      default:
+        return null;
     }
   };
 
@@ -138,6 +166,28 @@ export default function Contact() {
                     {CONTACT_INFO.email}
                   </a>
                 </p>
+              </div>
+
+              {/* Social links — same destinations as footer */}
+              <div className="pt-2">
+                <h3 className="font-sans font-medium text-xs uppercase tracking-wider text-primary-text mb-3">
+                  Connect With Us
+                </h3>
+                <div className="flex space-x-5">
+                  {CONTACT_INFO.socials.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      {...(social.external
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                      className="text-secondary-text hover:text-primary-accent transition-colors duration-300"
+                      aria-label={social.ariaLabel}
+                    >
+                      {getSocialIcon(social.name)}
+                    </a>
+                  ))}
+                </div>
               </div>
             </motion.div>
 

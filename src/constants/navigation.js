@@ -14,12 +14,27 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT_INFO = {
-  email: 'animesh.patra@adm.iitkgp.ac.in',
+  email: 'musictherapylabpranava@gmail.com',
   phone: '+91-9933137876',
   address: 'The Academy of Classical and Folk Arts, IIT Kharagpur, West Bengal, India',
   socials: [
-    { name: 'YouTube', url: 'https://youtube.com', ariaLabel: 'Pranava YouTube Channel' },
-    { name: 'Instagram', url: 'https://instagram.com', ariaLabel: 'Pranava Instagram Page' },
-    { name: 'Spotify', url: 'https://spotify.com', ariaLabel: 'Pranava Spotify Playlists' }
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/share/19HwT7tALE/',
+      ariaLabel: 'Pranava Facebook Page',
+      external: true
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/pranava-the-music-therapy-lab-12a7a6426/',
+      ariaLabel: 'Pranava LinkedIn Profile',
+      external: true
+    },
+    {
+      name: 'Email',
+      url: 'mailto:musictherapylabpranava@gmail.com',
+      ariaLabel: 'Email Pranava',
+      external: false
+    }
   ]
 };
