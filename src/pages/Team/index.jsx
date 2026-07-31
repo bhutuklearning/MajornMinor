@@ -7,9 +7,9 @@ import CTA from '../../components/sections/CTA';
 import { IMAGES } from '../../constants/images';
 
 // Import team member photos (resourced from current placeholder assets matching original attachments)
-import satyabrataPhoto from '../../assets/images/hero-home.jpg'; // photo_2026-07-15_20-57-34.jpg
+import satyabrataPhoto from '../../assets/images/satyabrata.jpeg';
 import alakanandaPhoto from '../../assets/images/alokananda.jpg';
-import kaberiPhoto from '../../assets/images/gallery-1.jpg';       // photo_2026-07-15_20-57-41.jpg
+import kaberiPhoto from '../../assets/images/kaberi.jpeg';
 import debaratiPhoto from '../../assets/images/gallery-2.jpg';     // photo_2026-07-15_20-57-45.jpg
 import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
 import anandaroopPhoto from '../../assets/images/anandaroop.png';
@@ -20,9 +20,10 @@ import arindampatraPhoto from '../../assets/images/arindampatra.png';
 import amiyangshudePhoto from '../../assets/images/amiyangshude.jpeg';
 import vikashjhaPhoto from '../../assets/images/vikashjha.png';
 import sayanpalPhoto from '../../assets/images/sayanpal.jpeg';
-import amritanshuPhoto from '../../assets/images/amritanshu.jpeg';
+import amritanshuPhoto from '../../assets/images/amritanshu-new.png';
 import avoysasmalPhoto from '../../assets/images/avoysasmal.jpeg';
 import pragatiPhoto from '../../assets/images/pragati.jpeg';
+import animeshPhoto from '../../assets/images/animesh.jpeg';
 
 /**
  * Our Team page showcasing project investigators, advisory members, and core staff,
@@ -45,7 +46,8 @@ export default function Team() {
       role: "Principal Investigator (PI)",
       affiliation: "Department of Bioscience and Biotechnology, IIT Kharagpur",
       category: "pi-copi",
-      photo: null
+      photo: animeshPhoto,
+      objectPosition: "object-top"
     },
     {
       name: "Prof. Anandaroop Bhattacharya",
