@@ -19,6 +19,10 @@ import rajlakshmiPhoto from '../../assets/images/rajlakshmi.png';
 import arindampatraPhoto from '../../assets/images/arindampatra.png';
 import amiyangshudePhoto from '../../assets/images/amiyangshude.jpeg';
 import vikashjhaPhoto from '../../assets/images/vikashjha.png';
+import sayanpalPhoto from '../../assets/images/sayanpal.jpeg';
+import amritanshuPhoto from '../../assets/images/amritanshu.jpeg';
+import avoysasmalPhoto from '../../assets/images/avoysasmal.jpeg';
+import pragatiPhoto from '../../assets/images/pragati.jpeg';
 
 /**
  * Our Team page showcasing project investigators, advisory members, and core staff,
@@ -138,21 +142,30 @@ export default function Team() {
       role: "Technical & Research Support",
       affiliation: "",
       category: "expert-team",
-      photo: null
+      photo: amritanshuPhoto
     },
     {
       name: "Avoy Sasmal",
       role: "Technical & Research Support",
       affiliation: "",
       category: "expert-team",
-      photo: null
+      photo: avoysasmalPhoto,
+      objectPosition: "object-top",
+      customScale: "scale-[1.20] group-hover:scale-[1.25] origin-top"
     },
     {
       name: "Sayan Pal",
       role: "Researcher",
       affiliation: "",
       category: "expert-team",
-      photo: null
+      photo: sayanpalPhoto
+    },
+    {
+      name: "Pragati Jaiswal",
+      role: "Researcher",
+      affiliation: "",
+      category: "expert-team",
+      photo: pragatiPhoto
     }
   ];
 
@@ -249,7 +262,7 @@ export default function Team() {
                         <img 
                           src={member.photo} 
                           alt={member.name} 
-                          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${member.objectPosition || 'object-center'}`} 
+                          className={`w-full h-full object-cover transition-transform duration-700 ${member.customScale || 'group-hover:scale-105'} ${member.objectPosition || 'object-center'}`} 
                           loading="lazy"
                         />
                       ) : (
