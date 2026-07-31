@@ -1,7 +1,7 @@
 // Centralized image constants to support easy swaps, lazy loading, and future CDN/WebP configurations.
 import logoImage from '../assets/images/logo-p.png';
 import heroHome from '../assets/images/hero-home.jpg';
-import heroAbout from '../assets/images/hero-about.jpg';
+import heroAbout from '../assets/images/about-hero.png';
 import aboutHomeImage from '../assets/images/about-us-home.jpeg';
 import whatWeDoImage from '../assets/images/what-we-do-new.jpeg';
 import krishnaFluteImage from '../assets/images/krishna-flute.jpg';
@@ -9,6 +9,11 @@ import objectivesImage from '../assets/images/objectives-new.jpeg';
 import gallery1 from '../assets/images/gallery-new.png';
 import gallery2 from '../assets/images/gallery-2.jpg';
 import gallery3 from '../assets/images/gallery-3.jpg';
+import traumaImage from '../assets/images/trauma-integration.jpeg';
+import lonelinessImage from '../assets/images/loneliness.jpeg';
+import anxietyImage from '../assets/images/anxiety-reduction.jpeg';
+import stressImage from '../assets/images/stress-alleviation.jpeg';
+import methodologyImage from '../assets/images/methodology.jpeg';
 
 export const IMAGES = {
   logo: {
@@ -28,6 +33,13 @@ export const IMAGES = {
     hero: heroAbout,
     heroAlt: "Soft light filtering through a room, creating a calm atmosphere of healing and research.",
     mainImage: aboutHomeImage,
+    methodology: methodologyImage,
+  },
+  focusAreas: {
+    trauma: traumaImage,
+    loneliness: lonelinessImage,
+    anxiety: anxietyImage,
+    stress: stressImage,
   },
   gallery: [
     {

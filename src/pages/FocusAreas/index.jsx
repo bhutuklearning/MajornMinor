@@ -16,7 +16,7 @@ export default function FocusAreas() {
       id: "stress",
       title: "Stress Alleviation",
       subtitle: "Auditory Entrainment & Alpha Pacing",
-      image: IMAGES.gallery[0].src,
+      image: IMAGES.focusAreas.stress,
       alt: "Quiet nature scene symbolizing stress relief and sound resonance.",
       description: "Auditory entrainment works by introducing specific pacing frequencies that guide hyperactive brainwaves down to slower, resting states. During high stress, the brain operates primarily in rapid Beta waves (12–30 Hz). By designing soundscapes centered around a constant 8–12 Hz Alpha rhythm, we encourage neural networks to sync with these calming frequencies. Over a 20-minute listening cycle, autonomic arousal drops, cortisol levels decline, and cognitive strain gives way to deep mental decompression.",
       points: [
@@ -29,7 +29,7 @@ export default function FocusAreas() {
       id: "anxiety",
       title: "Anxiety Reduction",
       subtitle: "Vagal Nerve Stimulation & Resonance",
-      image: IMAGES.gallery[1].src,
+      image: IMAGES.focusAreas.anxiety,
       alt: "Clean ripples on sand, depicting calming sound waves.",
       description: "Resonant low-frequency acoustic vibrations possess the unique capability to physically engage body tissue and stimulate the vagus nerve. By utilizing organic acoustic instruments (such as gongs, cellos, and large singing bowls), we generate sound waves that trigger the parasympathetic nervous system. This activation decreases heart rate variability conflicts, relaxes muscular tension, and signals safety directly to the emotional processing centers of the brain.",
       points: [
@@ -42,7 +42,7 @@ export default function FocusAreas() {
       id: "trauma",
       title: "Trauma Integration",
       subtitle: "Somatic Listening & Grounding Soundscapes",
-      image: IMAGES.gallery[2].src,
+      image: IMAGES.focusAreas.trauma,
       alt: "Piano keys in soft lighting, showing peace and classical beauty.",
       description: "For individuals carrying emotional trauma, traditional speaking therapies can sometimes re-trigger somatic stress responses. Sound healing offers a non-verbal backdoor to emotional regulation. We build highly structured, predictable soundscapes using repeating harmonic scales. This architectural predictability offers a safe, grounding environment where the patient's nervous system can release stored trauma without needing to articulate the underlying memory.",
       points: [
@@ -55,7 +55,7 @@ export default function FocusAreas() {
       id: "loneliness",
       title: "Loneliness & Isolation",
       subtitle: "Communal Resonance & Auditory Circles",
-      image: IMAGES.home.hero,
+      image: IMAGES.focusAreas.loneliness,
       alt: "Warm lighting reflecting off musical instruments.",
       description: "Loneliness alters neurological threat perception, causing individuals to exist in a state of chronic social hyper-vigilance. Our Communal Resonance programs address this by uniting people in shared sound fields. Participating in group sound baths, vocal tone circles, or active rhythm making synchronizes physiological states (such as breathing and heart rate) across participants. This physical resonance breaks down feelings of isolation and fosters deep, non-verbal connection.",
       points: [

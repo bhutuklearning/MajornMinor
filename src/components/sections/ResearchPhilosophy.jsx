@@ -55,9 +55,9 @@ export default function ResearchPhilosophy() {
             {/* Styled offset background border */}
             <div className="absolute inset-0 border border-primary-accent translate-x-3 translate-y-3 pointer-events-none"></div>
             
-            <div className="relative border border-border bg-surface overflow-hidden aspect-[4/5]">
+            <div className="relative border border-border bg-surface overflow-hidden aspect-square">
               <img
-                src={IMAGES.gallery[0].src}
+                src={IMAGES.about.methodology}
                 alt="A supportive musical therapeutic space representing sound waves reflection"
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
