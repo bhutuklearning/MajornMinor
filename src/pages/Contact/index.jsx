@@ -6,7 +6,7 @@ import * as z from 'zod';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
-import { FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaEnvelope, FaYoutube, FaInstagram } from 'react-icons/fa';
 import SEO from '../../components/common/SEO';
 import PageBanner from '../../components/ui/PageBanner';
 import Container from '../../components/ui/Container';
@@ -91,6 +91,10 @@ export default function Contact() {
         return <FaLinkedin className="h-5 w-5" />;
       case 'email':
         return <FaEnvelope className="h-5 w-5" />;
+      case 'youtube':
+        return <FaYoutube className="h-5 w-5" />;
+      case 'instagram':
+        return <FaInstagram className="h-5 w-5" />;
       default:
         return null;
     }

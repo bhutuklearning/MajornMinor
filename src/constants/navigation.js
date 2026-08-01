@@ -35,6 +35,18 @@ export const CONTACT_INFO = {
       url: 'mailto:musictherapylabpranava@gmail.com',
       ariaLabel: 'Email Pranava',
       external: false
+    },
+    {
+      name: 'YouTube',
+      url: 'https://www.youtube.com/@PranavaMusicTherapyLab',
+      ariaLabel: 'Pranava YouTube Channel',
+      external: true
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/pranavathemusictherapy_?igsh=Nm1lcHJ5a3g3Zmxw',
+      ariaLabel: 'Pranava Instagram Profile',
+      external: true
     }
   ]
 };

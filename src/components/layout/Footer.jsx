@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaEnvelope, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { HiChevronUp } from 'react-icons/hi';
 import Container from '../ui/Container';
 import { NAV_LINKS, CONTACT_INFO } from '../../constants/navigation';
@@ -40,6 +40,10 @@ export default function Footer() {
         return <FaLinkedin className="h-5 w-5" />;
       case 'email':
         return <FaEnvelope className="h-5 w-5" />;
+      case 'youtube':
+        return <FaYoutube className="h-5 w-5" />;
+      case 'instagram':
+        return <FaInstagram className="h-5 w-5" />;
       default:
         return null;
     }
