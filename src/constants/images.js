@@ -15,6 +15,8 @@ import anxietyImage from '../assets/images/anxiety-reduction.jpeg';
 import stressImage from '../assets/images/stress-alleviation.jpeg';
 import methodologyImage from '../assets/images/methodology.jpeg';
 import focusHeroImage from '../assets/images/focus-hero.jpeg';
+import gapNeuroscienceImage from '../assets/images/Gap-Nuroscience.jpeg';
+import contactHeroImage from '../assets/images/bg-contact-us.jpeg';
 
 export const IMAGES = {
   logo: {
@@ -35,6 +37,12 @@ export const IMAGES = {
     heroAlt: "Soft light filtering through a room, creating a calm atmosphere of healing and research.",
     mainImage: aboutHomeImage,
     methodology: methodologyImage,
+    beginnings: gapNeuroscienceImage,
+    beginningsAlt: "Artistic illustration bridging auditory neuroscience with cultural wellness traditions."
+  },
+  contact: {
+    hero: contactHeroImage,
+    heroAlt: "Warm artistic portrait backdrop for connecting with Pranava Music Therapy Lab."
   },
   focusAreas: {
     hero: focusHeroImage,

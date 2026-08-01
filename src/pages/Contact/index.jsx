@@ -112,9 +112,9 @@ export default function Contact() {
         ]}
       />
 
-      <PageBanner 
-        image={IMAGES.about.hero} 
-        alt="Contact us header banner"
+      <PageBanner
+        image={IMAGES.contact.hero}
+        alt={IMAGES.contact.heroAlt}
         title="Connect With Us" 
         subtitle="Contact"
       />

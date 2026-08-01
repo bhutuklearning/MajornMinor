@@ -1,49 +1,65 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Container from '../ui/Container';
+import { IMAGES } from '../../constants/images';
 
 /**
- * Editorial narrative columns presenting the initiative's history and core problem statements.
+ * Editorial narrative section presenting the initiative's beginnings —
+ * featured image on the left, heading and story copy on the right.
  */
 export default function StorySection() {
   return (
     <section className="py-20 sm:py-28 bg-surface w-full">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* Left Column - Large Lead statement */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left Column - Featured Image */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 relative"
           >
-            <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block mb-3">
-              Our Beginnings
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-primary-text font-normal leading-tight tracking-tight">
-              Bridging the gap between auditory neuroscience and cultural wellness traditions.
-            </h2>
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-bg aspect-[4/5] sm:aspect-[3/4]">
+              <img
+                src={IMAGES.about.beginnings}
+                alt={IMAGES.about.beginningsAlt}
+                loading="lazy"
+                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
+            </div>
           </motion.div>
 
-          {/* Right Column - Descriptive copy */}
+          {/* Right Column - Heading + Story Copy */}
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:col-span-7 space-y-6 text-secondary-text font-sans text-xs sm:text-sm md:text-base leading-relaxed"
+            className="lg:col-span-7 space-y-6"
           >
-            <p>
-              Pranava was founded under a singular premise: that music is not merely a tool for passive leisure, but a biological utility for neurological restoration. In a fast-paced world saturated with sensory noise, the mind struggles to return to its homeostatic state, leading to stress, chronic anxiety, and cognitive overload.
-            </p>
-            <p>
-              Our journey began as a collaborative research inquiry between clinical music therapists, psychoacousticians, and mental health advocates. Observing how specific harmonic ratios, tempos, and ambient structures directly lower autonomic nervous system arousal, we sought to build something more than clinical treatment: a peaceful sanctuary open to all.
-            </p>
-            <p>
-              By referencing both historical, ancient acoustic traditions and modern peer-reviewed findings, we configure auditory wellness programs that respect cultural heritage while answering to strict scientific standards. We believe that mental recovery shouldn't be isolated behind sterile laboratory doors, but shared openly within warm communal spaces.
-            </p>
+            <div>
+              <span className="font-sans text-xs tracking-widest uppercase text-secondary-accent font-semibold block mb-3">
+                Our Beginnings
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-primary-text font-normal leading-tight tracking-tight">
+                Bridging the gap between auditory neuroscience and cultural wellness traditions.
+              </h2>
+            </div>
+
+            <div className="space-y-5 text-secondary-text font-sans text-xs sm:text-sm md:text-base leading-relaxed">
+              <p>
+                Pranava was founded under a singular premise: that music is not merely a tool for passive leisure, but a biological utility for neurological restoration. In a fast-paced world saturated with sensory noise, the mind struggles to return to its homeostatic state, leading to stress, chronic anxiety, and cognitive overload.
+              </p>
+              <p>
+                Our journey began as a collaborative research inquiry between clinical music therapists, psychoacousticians, and mental health advocates. Observing how specific harmonic ratios, tempos, and ambient structures directly lower autonomic nervous system arousal, we sought to build something more than clinical treatment: a peaceful sanctuary open to all.
+              </p>
+              <p>
+                By referencing both historical, ancient acoustic traditions and modern peer-reviewed findings, we configure auditory wellness programs that respect cultural heritage while answering to strict scientific standards. We believe that mental recovery shouldn't be isolated behind sterile laboratory doors, but shared openly within warm communal spaces.
+              </p>
+            </div>
           </motion.div>
 
         </div>
