@@ -4,8 +4,7 @@ import Container from '../ui/Container';
 import { IMAGES } from '../../constants/images';
 
 /**
- * Technical section outlining psychoacoustics research, supported by
- * a stylized double-bordered image frame.
+ * Technical section outlining psychoacoustics research.
  */
 export default function ResearchPhilosophy() {
   return (
@@ -44,7 +43,7 @@ export default function ResearchPhilosophy() {
             </div>
           </motion.div>
 
-          {/* Right Column - Supporting Image with offset background outline */}
+          {/* Right Column - Supporting Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -52,9 +51,6 @@ export default function ResearchPhilosophy() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="lg:col-span-5 relative"
           >
-            {/* Styled offset background border */}
-            <div className="absolute inset-0 border border-primary-accent translate-x-3 translate-y-3 pointer-events-none"></div>
-            
             <div className="relative border border-border bg-surface overflow-hidden aspect-square">
               <img
                 src={IMAGES.about.methodology}

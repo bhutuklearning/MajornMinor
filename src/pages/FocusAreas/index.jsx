@@ -129,8 +129,6 @@ export default function FocusAreas() {
                       transition={{ duration: 0.8, delay: 0.15 }}
                       className={`lg:col-span-5 relative ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}
                     >
-                      {/* Offset accent border */}
-                      <div className="absolute inset-0 border border-primary-accent translate-x-3 translate-y-3 pointer-events-none"></div>
                       <div className="relative border border-border bg-surface overflow-hidden aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
                         <img
                           src={sec.image}

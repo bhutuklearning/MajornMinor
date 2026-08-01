@@ -22,9 +22,6 @@ export default function MissionSection({ id }) {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 relative"
           >
-            {/* Accent offset frame */}
-            <div className="absolute inset-0 border border-primary-accent/40 translate-x-3 translate-y-3 pointer-events-none rounded-2xl"></div>
-            
             {/* Image Wrapper */}
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-surface aspect-[2/3]">
               <img

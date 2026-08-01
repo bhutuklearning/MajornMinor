@@ -94,10 +94,7 @@ export default function Objectives() {
           >
             {/* Ambient shadow glow */}
             <div className="absolute inset-0 bg-primary-accent/5 blur-3xl rounded-full translate-y-8 -z-10"></div>
-            
-            {/* The Image Wrapper with offset frame matching our About Us style */}
-            <div className="absolute inset-0 border border-primary-accent/40 translate-x-3 translate-y-3 pointer-events-none rounded-2xl"></div>
-            
+
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl bg-surface aspect-square">
               <img
                 src={IMAGES.home.objectivesImage || IMAGES.gallery[1].src}

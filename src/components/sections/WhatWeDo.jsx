@@ -48,8 +48,8 @@ export default function WhatWeDo() {
           >
             {/* Ambient Shadow glow */}
             <div className="absolute inset-0 bg-primary-accent/5 blur-3xl rounded-full translate-y-8 -z-10"></div>
-            
-            {/* The Image Wrapper with editorial frame */}
+
+            {/* The Image Wrapper */}
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-bg aspect-square">
               <img
                 src={IMAGES.home.whatWeDoImage || IMAGES.gallery[0].src}
