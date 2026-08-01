@@ -79,7 +79,7 @@ export default function FocusAreas() {
       />
 
       <PageBanner 
-        image={IMAGES.gallery[0].src} 
+        image={IMAGES.focusAreas.hero} 
         alt="Sound therapy focus areas banner"
         title="Therapeutic Focus Areas" 
         subtitle="Focus Areas"

@@ -14,6 +14,7 @@ import lonelinessImage from '../assets/images/loneliness.jpeg';
 import anxietyImage from '../assets/images/anxiety-reduction.jpeg';
 import stressImage from '../assets/images/stress-alleviation.jpeg';
 import methodologyImage from '../assets/images/methodology.jpeg';
+import focusHeroImage from '../assets/images/focus-hero.jpeg';
 
 export const IMAGES = {
   logo: {
@@ -36,6 +37,7 @@ export const IMAGES = {
     methodology: methodologyImage,
   },
   focusAreas: {
+    hero: focusHeroImage,
     trauma: traumaImage,
     loneliness: lonelinessImage,
     anxiety: anxietyImage,
