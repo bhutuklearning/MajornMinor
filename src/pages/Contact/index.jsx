@@ -153,7 +153,7 @@ export default function Contact() {
                     Telephone Inquiries
                   </h3>
                   <p>
-                    <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary-accent transition-colors">
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-primary-accent hover:underline font-medium">
                       {CONTACT_INFO.phone}
                     </a>
                   </p>

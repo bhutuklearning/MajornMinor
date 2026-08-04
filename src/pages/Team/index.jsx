@@ -10,8 +10,7 @@ import { IMAGES } from '../../constants/images';
 import satyabrataPhoto from '../../assets/images/satyabrata.jpeg';
 import alakanandaPhoto from '../../assets/images/alokananda.jpg';
 import kaberiPhoto from '../../assets/images/kaberi.jpeg';
-import debaratiPhoto from '../../assets/images/debarati-new.jpeg';
-import somnathPhoto from '../../assets/images/gallery-3.jpg';      // photo_2026-07-15_20-57-47.jpg
+import debaratiPhoto from '../../assets/images/debarati-new.jpeg';     // photo_2026-07-15_20-57-47.jpg
 import anandaroopPhoto from '../../assets/images/anandaroop.png';
 import joysenPhoto from '../../assets/images/joysen.png';
 import arnabroyPhoto from '../../assets/images/arnabroy.png';
@@ -24,6 +23,10 @@ import amritanshuPhoto from '../../assets/images/amritanshu-new.png';
 import avoysasmalPhoto from '../../assets/images/avoysasmal.jpeg';
 import pragatiPhoto from '../../assets/images/pragati.jpeg';
 import animeshPhoto from '../../assets/images/animesh.jpeg';
+import supanotbasu from '../../assets/images/supanto-basu.jpg';
+import avitoshDas from '../../assets/images/avitosh.jpeg';
+import soumyadeepbera from "../../assets/images/soumodeep-bera.jpeg";
+import souravbera from "../../assets/images/sourav-bera.jpeg";
 
 /**
  * Our Team page showcasing project investigators, advisory members, and core staff,
@@ -35,7 +38,7 @@ export default function Team() {
   const filters = [
     { key: 'pi-copi', label: 'PI & Co-PI' },
     { key: 'advisory', label: 'Advisory Committee' },
-    { key: 'team-members', label: 'Team Members' },
+    { key: 'team-members', label: 'Executive members' },
     { key: 'expert-team', label: 'Expert Team' }
   ];
 
@@ -97,7 +100,7 @@ export default function Team() {
     // Team Members
     {
       name: "Satyabrata Acharya",
-      role: "Project Lead – Conceptual Design & Research Implementation",
+      role: " Conceptual Design & Research Implementation",
       affiliation: "National Digital Library of India (NDLI), IIT Kharagpur",
       category: "team-members",
       photo: satyabrataPhoto
@@ -107,12 +110,12 @@ export default function Team() {
       role: "Program Coordinator & Technical Operations Lead",
       affiliation: "Academic Section, IIT Kharagpur",
       category: "team-members",
-      photo: somnathPhoto
+      photo: null
     },
     {
       name: "Alakananda Roy",
       role: "Indian Music Expert & Training Lead",
-      affiliation: "Department of Aerospace Engineering, IIT Kharagpur",
+      affiliation: "Community Engagement & Expressive Facilitation Coordinator, IIT Kharagpur",
       category: "team-members",
       photo: alakanandaPhoto,
       objectPosition: "object-top"
@@ -120,7 +123,7 @@ export default function Team() {
     {
       name: "Kaberi Ganguly",
       role: "Community Engagement & Expressive Facilitation Coordinator",
-      affiliation: "Independent Voice Artist (Recitation), IIT Kharagpur Campus Community",
+      affiliation: "Independent Voice Artist , IIT Kharagpur Campus Community",
       category: "team-members",
       photo: kaberiPhoto
     },
@@ -139,7 +142,22 @@ export default function Team() {
       photo: vikashjhaPhoto
     },
     // Expert Team
+
     {
+      name: "Supanto Basu",
+      role: "Music Expert",
+      affiliation: "",
+      category: "expert-team",
+      photo: supanotbasu
+    }, 
+    {
+      name: "Avitosh Das",
+      role: "Technical & Research Support",
+      affiliation: "",
+      category: "expert-team",
+      photo: avitoshDas
+    },
+     {
       name: "Amritanshu Goutam",
       role: "Technical & Research Support",
       affiliation: "",
@@ -168,7 +186,21 @@ export default function Team() {
       affiliation: "",
       category: "expert-team",
       photo: pragatiPhoto
-    }
+    },
+        {
+      name: "Sourav Bera",
+      role: "community engagement & expressive facilitation",
+      affiliation: "",
+      category: "expert-team",
+      photo: souravbera
+    },
+    {
+      name: "Soumyadeep Bera",
+      role: "Market Research & Data Analysis",
+      affiliation: "",
+      category: "expert-team",
+      photo: soumyadeepbera
+    },
   ];
 
   // Filter members based on selected tab

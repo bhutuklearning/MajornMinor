@@ -7,7 +7,7 @@ import whatWeDoImage from '../assets/images/what-we-do-new.jpeg';
 import krishnaFluteImage from '../assets/images/krishna-flute.jpg';
 import objectivesImage from '../assets/images/objectives-new.jpeg';
 import gallery1 from '../assets/images/gallery-new.png';
-import gallery2 from '../assets/images/gallery-2.jpg';
+import gallery2 from '../assets/images/gallery-2.jpeg';
 import gallery3 from '../assets/images/gallery-3.jpg';
 import traumaImage from '../assets/images/trauma-integration.jpeg';
 import lonelinessImage from '../assets/images/loneliness.jpeg';

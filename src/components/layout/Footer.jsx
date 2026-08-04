@@ -73,6 +73,9 @@ export default function Footer() {
             <p className="font-sans text-xs sm:text-sm leading-relaxed max-w-md text-bg/75">
               A music-based mental wellness initiative. Helping people experiencing stress, anxiety, trauma, and loneliness through the healing power and scientific credibility of sound.
             </p>
+            <p className="font-sans text-[11px] sm:text-xs leading-relaxed max-w-md text-bg/70 uppercase tracking-[0.22em]">
+              Institute of Eminence, IIT Kharagpur, Govt. of India
+            </p>
             <div className="flex space-x-5 pt-2">
               {CONTACT_INFO.socials.map((social) => (
                 <a
